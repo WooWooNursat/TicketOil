@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  TicketOil
+
+  Created by Nursat on 17.04.2022.
+  
+*/
+
+"common.hello_world" = "Привет мир";

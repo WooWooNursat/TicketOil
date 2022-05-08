@@ -1,0 +1,18 @@
+xcassets:
+  inputs: TicketOil/Resources/Images/Assets.xcassets
+  outputs:
+    - templateName: swift5
+      output: TicketOil/Resources/Images/Assets.swift
+      params:
+        enumName: Assets
+        publicAccess: 1
+strings:
+  inputs: 
+    - TicketOil/Resources/Localization/ru.lproj/Localizable.strings
+    - TicketOil/Resources/Localization/ru.lproj/Localizable.stringsdict
+  outputs:
+    - templatePath: Templates/Localization.stencil
+      output: TicketOil/Resources/Localization/L10n.swift
+      params:
+        noComments: 1
+
