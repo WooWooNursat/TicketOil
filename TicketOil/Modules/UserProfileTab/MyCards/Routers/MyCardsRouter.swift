@@ -1,13 +1,14 @@
 //
-//  AuthHome.swift
+//  MyCardsRouter.swift
 //  TicketOil
 //
-//  Created by Nursat on 17.04.2022.
+//  Created by Nursat on 10.05.2022.
 //
 
+import Foundation
 import UIKit
 
-final class AuthHomeRouter: Router {
+final class MyCardsRouter: Router {
     // MARK: - Enums
     
     enum PresentationContext {
@@ -15,8 +16,6 @@ final class AuthHomeRouter: Router {
     }
     
     enum RouteType {
-        case register
-        case mainTabBar
     }
     
     // MARK: - Properties
@@ -35,17 +34,8 @@ final class AuthHomeRouter: Router {
         
         switch context {
         case .default:
-            return
+            break
         }
-    }
-    
-    func setRootViewController() {
-        let vc = AuthHomeViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-        vc.viewModel = AuthHomeViewModel(router: self)
-        
-        let navVC = UINavigationController(rootViewController: vc)
-        baseViewController = vc
-        navVC.setRootViewController()
     }
     
     func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
@@ -60,12 +50,6 @@ final class AuthHomeRouter: Router {
         }
         
         switch routeType {
-        case .register:
-            let router = UserRegisterRouter()
-            let context = UserRegisterRouter.PresentationContext.default
-            router.present(on: baseVC, animated: true, context: context, completion: nil)
-        case .mainTabBar:
-            MainTabBarController().setRootViewController()
         }
     }
     

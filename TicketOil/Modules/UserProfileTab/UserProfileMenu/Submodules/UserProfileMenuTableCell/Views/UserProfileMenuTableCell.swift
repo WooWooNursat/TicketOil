@@ -73,6 +73,7 @@ final class UserProfileMenuTableCell: UITableViewCell, View, Reusable {
     private func markup() {
         accessoryType = .disclosureIndicator
         tintColor = .white
+        backgroundColor = .clear
         contentView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints { make in

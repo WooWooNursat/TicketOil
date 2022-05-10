@@ -27,7 +27,7 @@ final class MainTabBarController: UITabBarController {
     }()
     
     lazy var qrScanVC: QRScanViewController = {
-        let vc = QRScanViewController()
+        let vc = QRScanViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
         let router = QRScanRouter()
         router.baseViewController = vc
         vc.viewModel = QRScanViewModel(router: router)
@@ -69,7 +69,6 @@ final class MainTabBarController: UITabBarController {
     // MARK: - Markup
     
     private func markup() {
-//        tabBar.tintColor =
-//        tabBar.unselectedItemTintColor = .sexyGray
+        tabBar.tintColor = UIColor(hex: "#D61616")
     }
 }

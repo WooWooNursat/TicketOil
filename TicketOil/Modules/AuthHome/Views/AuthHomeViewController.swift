@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class AuthHomeViewController: UIViewController, View {
+final class AuthHomeViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: AuthHomeViewModelProtocol!
@@ -20,7 +20,7 @@ final class AuthHomeViewController: UIViewController, View {
     
     lazy var phoneNumberLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textColor = .white
         label.text = "Номер телефона"
         return label
@@ -34,7 +34,7 @@ final class AuthHomeViewController: UIViewController, View {
     
     lazy var passwordLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textColor = .white
         label.text = "Пароль"
         return label
@@ -43,6 +43,8 @@ final class AuthHomeViewController: UIViewController, View {
     lazy var passwordTextField: BaseTextField = {
         let textField = BaseTextField(size: .medium)
         textField.placeholder = "Введите пароль"
+        textField.textContentType = .password
+        textField.isSecureTextEntry = true
         return textField
     }()
     
@@ -58,6 +60,7 @@ final class AuthHomeViewController: UIViewController, View {
     lazy var loginButton: BaseButton = {
         let button = BaseButton()
         button.setTitle("Войти", for: .normal)
+        button.addTarget(self, action: #selector(loginButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -80,6 +83,10 @@ final class AuthHomeViewController: UIViewController, View {
     
     @objc private func registerButtonDidTap() {
         viewModel.registration()
+    }
+    
+    @objc private func loginButtonDidTap() {
+        viewModel.login()
     }
     
     // MARK: - Lifecycle
@@ -194,7 +201,7 @@ final class AuthHomeViewController: UIViewController, View {
         }
         
         registerButton.snp.makeConstraints { make in
-            make.top.equalTo(loginButton.snp.bottom).offset(8)
+            make.top.equalTo(loginButton.snp.bottom).offset(12)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }

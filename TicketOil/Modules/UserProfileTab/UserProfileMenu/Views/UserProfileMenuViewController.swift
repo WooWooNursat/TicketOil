@@ -11,7 +11,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-final class UserProfileMenuViewController: UIViewController, View {
+final class UserProfileMenuViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: UserProfileMenuViewModelProtocol!
@@ -32,6 +32,8 @@ final class UserProfileMenuViewController: UIViewController, View {
     
     lazy var editProfileButton: UIButton = {
         let button = UIButton()
+        button.contentHorizontalAlignment = .leading
+        button.titleLabel?.font = .systemFont(ofSize: 12, weight: .regular)
         button.setTitle("Редактировать профиль", for: .normal)
         return button
     }()
@@ -39,6 +41,7 @@ final class UserProfileMenuViewController: UIViewController, View {
     lazy var gearButton: UIButton = {
         let button = UIButton()
         button.setImage(Assets.gear.image, for: .normal)
+        button.setContentCompressionResistancePriority(.required, for: .horizontal)
         return button
     }()
     
@@ -50,8 +53,10 @@ final class UserProfileMenuViewController: UIViewController, View {
     
     lazy var tableView: UITableView = {
         let view = UITableView()
+        view.backgroundColor = .clear
+        view.separatorStyle = .none
         view.tableFooterView = UIView()
-        view.rowHeight = UITableView.automaticDimension
+        view.rowHeight = 54
         view.showsVerticalScrollIndicator = false
         view.estimatedRowHeight = 54
         view.contentInsetAdjustmentBehavior = .never
@@ -110,6 +115,7 @@ final class UserProfileMenuViewController: UIViewController, View {
     // MARK: - Markup
     
     private func markup() {
+        view.backgroundColor = UIColor(hex: "#D61616")
         [imageView, editProfileButton, gearButton, faqButton, tableView]
             .forEach { view.addSubview($0) }
         
@@ -161,5 +167,9 @@ extension UserProfileMenuViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         20
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

@@ -8,7 +8,7 @@
 import SnapKit
 import UIKit
 
-final class LaunchScreenViewController: UIViewController {
+final class LaunchScreenViewController: ViewController {
     // MARK: - Outlets
     
     lazy var appNameLabel: UILabel = {

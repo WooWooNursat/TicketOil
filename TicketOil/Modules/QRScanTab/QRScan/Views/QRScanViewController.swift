@@ -10,11 +10,13 @@ import UIKit
 import SnapKit
 import AVFoundation
 
-final class QRScanViewController: UIViewController, View {
+final class QRScanViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: QRScanViewModelProtocol!
     var devicePosition: AVCaptureDevice.Position = .back
+    
+    private let navigationBarConfigurator: NavigationBarConfigurator
     
     private lazy var captureSession: AVCaptureSession? = {
         let session = AVCaptureSession()
@@ -90,6 +92,15 @@ final class QRScanViewController: UIViewController, View {
     
     // MARK: - Lifecycle
     
+    init(navigationBarConfigurator: NavigationBarConfigurator) {
+        self.navigationBarConfigurator = navigationBarConfigurator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -113,20 +124,14 @@ final class QRScanViewController: UIViewController, View {
     // MARK: - Configurations
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.tintColor = .systemBlue
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = false
-        if #available(iOS 13.0, *) {
-            navigationController?.navigationBar.standardAppearance.configureWithTransparentBackground()
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        } else {
-            // Fallback on earlier versions
-            navigationController?.navigationBar.shadowImage = UIImage()
-            navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        guard let navigationBar = navigationController?.navigationBar else {
+            return
         }
+        
+        navigationBarConfigurator.configure(
+            navigationBar: navigationBar,
+            with: .transparent
+        )
     }
     
     private func startSession() {

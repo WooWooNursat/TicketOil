@@ -8,6 +8,7 @@
 
 protocol AuthHomeViewModelProtocol: ViewModel {
     func registration()
+    func login()
 }
 
 final class AuthHomeViewModel: AuthHomeViewModelProtocol {
@@ -25,6 +26,11 @@ final class AuthHomeViewModel: AuthHomeViewModelProtocol {
     
     func registration() {
         let context = AuthHomeRouter.RouteType.register
+        router.enqueueRoute(with: context)
+    }
+    
+    func login() {
+        let context = AuthHomeRouter.RouteType.mainTabBar
         router.enqueueRoute(with: context)
     }
 }

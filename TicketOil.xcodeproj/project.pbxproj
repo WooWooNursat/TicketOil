@@ -40,6 +40,10 @@
 		6D49E89528293514008E8793 /* QRScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E89428293514008E8793 /* QRScanViewModel.swift */; };
 		6D49E89728293534008E8793 /* QRScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E89628293534008E8793 /* QRScanViewController.swift */; };
 		6D49E899282936CB008E8793 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E898282936CB008E8793 /* UIViewControllerExtension.swift */; };
+		6D49E89C282A8E5F008E8793 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E89B282A8E5F008E8793 /* ViewController.swift */; };
+		6D49E8A3282ADE58008E8793 /* MyCardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8A2282ADE58008E8793 /* MyCardsRouter.swift */; };
+		6D49E8A5282ADE6C008E8793 /* MyCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8A4282ADE6C008E8793 /* MyCardsViewModel.swift */; };
+		6D49E8A7282ADE87008E8793 /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8A6282ADE87008E8793 /* MyCardsViewController.swift */; };
 		6D4C8C552814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C8C542814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift */; };
 		6D4C8C5728142966003BFA66 /* UserProfileMenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C8C5628142966003BFA66 /* UserProfileMenuTableCell.swift */; };
 		6D4C8C5B28155958003BFA66 /* UserProfileMenuRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C8C5A28155958003BFA66 /* UserProfileMenuRowType.swift */; };
@@ -90,6 +94,10 @@
 		6D49E89428293514008E8793 /* QRScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanViewModel.swift; sourceTree = "<group>"; };
 		6D49E89628293534008E8793 /* QRScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScanViewController.swift; sourceTree = "<group>"; };
 		6D49E898282936CB008E8793 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		6D49E89B282A8E5F008E8793 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6D49E8A2282ADE58008E8793 /* MyCardsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsRouter.swift; sourceTree = "<group>"; };
+		6D49E8A4282ADE6C008E8793 /* MyCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewModel.swift; sourceTree = "<group>"; };
+		6D49E8A6282ADE87008E8793 /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
 		6D4C8C542814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuTableCellViewModel.swift; sourceTree = "<group>"; };
 		6D4C8C5628142966003BFA66 /* UserProfileMenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuTableCell.swift; sourceTree = "<group>"; };
 		6D4C8C5A28155958003BFA66 /* UserProfileMenuRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuRowType.swift; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 		6D05B851280F1E9800FFF7C9 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				6D49E89A282A8E51008E8793 /* ViewController */,
 				6D05B858280F291700FFF7C9 /* BaseButton */,
 				6D05B855280F216E00FFF7C9 /* BaseTextField */,
 				6D05B852280F1E9C00FFF7C9 /* NavigationBarConfigurator */,
@@ -379,6 +388,48 @@
 			path = Routers;
 			sourceTree = "<group>";
 		};
+		6D49E89A282A8E51008E8793 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E89B282A8E5F008E8793 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		6D49E89E282ADE3B008E8793 /* MyCards */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8A1282ADE49008E8793 /* Routers */,
+				6D49E8A0282ADE46008E8793 /* ViewModels */,
+				6D49E89F282ADE43008E8793 /* Views */,
+			);
+			path = MyCards;
+			sourceTree = "<group>";
+		};
+		6D49E89F282ADE43008E8793 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8A6282ADE87008E8793 /* MyCardsViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6D49E8A0282ADE46008E8793 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8A4282ADE6C008E8793 /* MyCardsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6D49E8A1282ADE49008E8793 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8A2282ADE58008E8793 /* MyCardsRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		6D4C8C5828155925003BFA66 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,9 +485,9 @@
 		6D8643B4280BEA80007EA1A9 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				6D8643AE280BD4D8007EA1A9 /* Info.plist */,
 				6D8643A0280BD4D7007EA1A9 /* AppDelegate.swift */,
 				6D8643A2280BD4D7007EA1A9 /* SceneDelegate.swift */,
-				6D8643AE280BD4D8007EA1A9 /* Info.plist */,
 				6D2E143A280C0EC0003C4894 /* Resolver.swift */,
 			);
 			path = Application;
@@ -477,6 +528,7 @@
 		6DEAE81D2811D64400670BD8 /* UserProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				6D49E89E282ADE3B008E8793 /* MyCards */,
 				6DEAE81E2811D66000670BD8 /* UserProfileMenu */,
 			);
 			path = UserProfileTab;
@@ -676,6 +728,7 @@
 				6D2E1437280C0E6A003C4894 /* L10n.swift in Sources */,
 				6DEAE8272811D6AF00670BD8 /* UserProfileMenuViewController.swift in Sources */,
 				6D05B844280C359100FFF7C9 /* AuthHomeRouter.swift in Sources */,
+				6D49E89C282A8E5F008E8793 /* ViewController.swift in Sources */,
 				6D05B869281073A900FFF7C9 /* Code.swift in Sources */,
 				6D2E143E280C1121003C4894 /* LocalizationManager.swift in Sources */,
 				6D4C8C5B28155958003BFA66 /* UserProfileMenuRowType.swift in Sources */,
@@ -683,7 +736,9 @@
 				6D49E899282936CB008E8793 /* UIViewControllerExtension.swift in Sources */,
 				6D4C8C5728142966003BFA66 /* UserProfileMenuTableCell.swift in Sources */,
 				6D2E1446280C1A8E003C4894 /* LaunchScreenViewController.swift in Sources */,
+				6D49E8A7282ADE87008E8793 /* MyCardsViewController.swift in Sources */,
 				6D8643A1280BD4D7007EA1A9 /* AppDelegate.swift in Sources */,
+				6D49E8A5282ADE6C008E8793 /* MyCardsViewModel.swift in Sources */,
 				6D05B8632810713F00FFF7C9 /* DictionaryExtension.swift in Sources */,
 				6D05B85D281069AF00FFF7C9 /* NetworkInterceptor.swift in Sources */,
 				6D2E143B280C0EC0003C4894 /* Resolver.swift in Sources */,
@@ -693,6 +748,7 @@
 				6D4C8C552814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift in Sources */,
 				6D05B84C280F182100FFF7C9 /* ViewModel.swift in Sources */,
 				6D2E1444280C1210003C4894 /* StringExtension.swift in Sources */,
+				6D49E8A3282ADE58008E8793 /* MyCardsRouter.swift in Sources */,
 				6D05B86F28107F3D00FFF7C9 /* UserRegisterRouter.swift in Sources */,
 				6D49E88C2828015B008E8793 /* AppCoordinator.swift in Sources */,
 				6D2E1441280C119E003C4894 /* Language.swift in Sources */,
@@ -862,8 +918,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XH3C48BCU4;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TicketOil/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TicketOil/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -892,8 +948,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = XH3C48BCU4;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TicketOil/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = TicketOil/Application/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;

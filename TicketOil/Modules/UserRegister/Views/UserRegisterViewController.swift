@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
-final class UserRegisterViewController: UIViewController, View {
+final class UserRegisterViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: UserRegisterViewModelProtocol!
@@ -32,6 +32,7 @@ final class UserRegisterViewController: UIViewController, View {
         let label = UILabel()
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textColor = .white
+        label.text = "Номер телефона"
         return label
     }()
     
@@ -43,13 +44,16 @@ final class UserRegisterViewController: UIViewController, View {
     
     lazy var passwordLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .regular)
+        label.font = .systemFont(ofSize: 16, weight: .regular)
         label.textColor = .white
+        label.text = "Пароль"
         return label
     }()
     
     lazy var passwordTextField: BaseTextField = {
         let textField = BaseTextField(size: .medium)
+        textField.textContentType = .newPassword
+        textField.isSecureTextEntry = true
         textField.placeholder = "Введите пароль"
         return textField
     }()
@@ -64,6 +68,8 @@ final class UserRegisterViewController: UIViewController, View {
     lazy var repeatPasswordTextField: BaseTextField = {
         let textField = BaseTextField(size: .medium)
         textField.placeholder = "Снова введите пароль"
+        textField.isSecureTextEntry = true
+        textField.textContentType = .newPassword
         return textField
     }()
     
@@ -111,8 +117,12 @@ final class UserRegisterViewController: UIViewController, View {
         
         navigationBarConfigurator.configure(
             navigationBar: navigationBar,
-            with: .transparent
+            with: .default(
+                prefersLargeTitles: false,
+                needsToDisplayShadow: false
+            )
         )
+        navigationItem.title = "Регистрация"
     }
     
     private func subscribe() {

@@ -60,7 +60,7 @@ final class NavigationBarConfiguratorImpl: NavigationBarConfigurator {
         navigationBar.standardAppearance = makeDefaultNavigationBarAppearance(
             needsToDisplayShadow: needsToDisplayShadow
         )
-        navigationBar.tintColor = UIColor(hex: "#7377FA")
+        navigationBar.tintColor = UIColor(hex: "#FFFFFF")
     }
     
     private func configureTranspartNavigationBar(_ navigationBar: UINavigationBar) {
@@ -71,15 +71,15 @@ final class NavigationBarConfiguratorImpl: NavigationBarConfigurator {
     private func makeDefaultNavigationBarAppearance(needsToDisplayShadow: Bool) -> UINavigationBarAppearance {
         let appearance = UINavigationBarAppearance(idiom: .phone)
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(hex: "#FFFFFF")
+        appearance.backgroundColor = UIColor(hex: "#D61616")
         appearance.largeTitleTextAttributes = [
             .font: UIFont.systemFont(ofSize: 28, weight: .bold),
-            .foregroundColor: UIColor(hex: "#212121")!
+            .foregroundColor: UIColor(hex: "#FFFFFF")!
         ]
         appearance.shadowColor = needsToDisplayShadow ? UIColor(hex: "#E4E4E4") : nil
         appearance.titleTextAttributes = [
             .font: UIFont.systemFont(ofSize: 18, weight: .semibold),
-            .foregroundColor: UIColor(hex: "#212121")!
+            .foregroundColor: UIColor(hex: "#FFFFFF")!
         ]
         return appearance
     }
