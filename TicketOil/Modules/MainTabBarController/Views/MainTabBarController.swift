@@ -15,12 +15,24 @@ final class MainTabBarController: UITabBarController {
     // MARK: - Outlets
     
     lazy var userProfileVC: UserProfileMenuViewController = {
-        let vc = UserProfileMenuViewController(navigationBarConfiguration: NavigationBarConfiguratorImpl())
+        let vc = UserProfileMenuViewController(navigationBarConfiguration: DIResolver.resolve(NavigationBarConfigurator.self)!)
         let router = UserProfileMenuRouter()
         router.baseViewController = vc
         vc.viewModel = UserProfileMenuViewModel(router: router)
         
         let item = UITabBarItem(title: "Профиль", image: UIImage(), selectedImage: nil)
+        vc.tabBarItem = item
+        
+        return vc
+    }()
+    
+    lazy var qrScanVC: QRScanViewController = {
+        let vc = QRScanViewController()
+        let router = QRScanRouter()
+        router.baseViewController = vc
+        vc.viewModel = QRScanViewModel(router: router)
+        
+        let item = UITabBarItem(title: "Скан", image: UIImage(), selectedImage: nil)
         vc.tabBarItem = item
         
         return vc
@@ -34,7 +46,8 @@ final class MainTabBarController: UITabBarController {
         super.init(nibName: nil, bundle: nil)
         tabBar.itemPositioning = .fill
         viewControllers = [
-            UINavigationController(rootViewController: userProfileVC)
+            UINavigationController(rootViewController: userProfileVC),
+            UINavigationController(rootViewController: qrScanVC)
         ]
     }
     

@@ -15,6 +15,7 @@ public final class DIResolver {
         StoragesAssembly(),
         RepositoriesAssembly(),
         CoordinatorAssembly(),
+        ConfiguratorAssembly()
     ])
     
     class func resolve<Service>(_ serviceType: Service.Type) -> Service? {
@@ -57,5 +58,16 @@ private final class RepositoriesAssembly: Assembly {
 
 private final class CoordinatorAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(AppCoordinator.self) { r in
+            AppCoordinator()
+        }
+    }
+}
+
+private final class ConfiguratorAssembly: Assembly {
+    func assemble(container: Container) {
+        container.register(NavigationBarConfigurator.self) { r in
+            NavigationBarConfiguratorImpl()
+        }
     }
 }

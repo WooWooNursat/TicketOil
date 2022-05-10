@@ -22,6 +22,7 @@ final class UserRegisterViewController: UIViewController, View {
         label.font = .systemFont(ofSize: 60, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
+        label.text = "Ticketoil"
         return label
     }()
     
@@ -36,6 +37,7 @@ final class UserRegisterViewController: UIViewController, View {
     
     lazy var phoneNumberTextField: BaseTextField = {
         let textField = BaseTextField(size: .medium)
+        textField.placeholder = "Введите номер телефона"
         return textField
     }()
     
@@ -48,6 +50,7 @@ final class UserRegisterViewController: UIViewController, View {
     
     lazy var passwordTextField: BaseTextField = {
         let textField = BaseTextField(size: .medium)
+        textField.placeholder = "Введите пароль"
         return textField
     }()
     
@@ -60,7 +63,7 @@ final class UserRegisterViewController: UIViewController, View {
     
     lazy var repeatPasswordTextField: BaseTextField = {
         let textField = BaseTextField(size: .medium)
-        textField.placeholder = "Введите пароль"
+        textField.placeholder = "Снова введите пароль"
         return textField
     }()
     
@@ -119,6 +122,7 @@ final class UserRegisterViewController: UIViewController, View {
     // MARK: - Markup
     
     private func markup() {
+        view.backgroundColor = UIColor(hex: "#D61616")
         [titleLabel, textFieldsContainerView, registerButton]
             .forEach { view.addSubview($0) }
         [
@@ -128,7 +132,7 @@ final class UserRegisterViewController: UIViewController, View {
             passwordTextField,
             repeatPasswordLabel,
             repeatPasswordTextField
-        ].forEach { view.addSubview($0) }
+        ].forEach { textFieldsContainerView.addSubview($0) }
         [titleLayoutGuide, buttonLayoutGuide].forEach { view.addLayoutGuide($0) }
         
         titleLayoutGuide.snp.makeConstraints { make in
@@ -142,6 +146,7 @@ final class UserRegisterViewController: UIViewController, View {
         }
         
         textFieldsContainerView.snp.makeConstraints { make in
+            make.centerY.equalToSuperview()
             make.top.equalTo(titleLayoutGuide.snp.bottom)
             make.leading.trailing.equalToSuperview()
         }

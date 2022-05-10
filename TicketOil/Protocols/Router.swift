@@ -13,6 +13,7 @@ public protocol Router: AnyObject {
     func present(on baseVC: UIViewController, animated: Bool, context: Any?, completion: (() -> Void)?)
     func enqueueRoute(with context: Any?, animated: Bool, completion: (() -> Void)?)
     func dismiss(animated: Bool, completion: (() -> Void)?)
+    func setRootViewController()
 }
 
 extension Router {
@@ -31,4 +32,6 @@ extension Router {
     func dismiss(animated: Bool = true) {
         dismiss(animated: animated, completion: nil)
     }
+    
+    func setRootViewController() {}
 }

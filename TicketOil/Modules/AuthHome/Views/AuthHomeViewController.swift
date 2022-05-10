@@ -22,6 +22,7 @@ final class AuthHomeViewController: UIViewController, View {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = .white
+        label.text = "Номер телефона"
         return label
     }()
     
@@ -35,6 +36,7 @@ final class AuthHomeViewController: UIViewController, View {
         let label = UILabel()
         label.font = .systemFont(ofSize: 20, weight: .regular)
         label.textColor = .white
+        label.text = "Пароль"
         return label
     }()
     
@@ -49,6 +51,7 @@ final class AuthHomeViewController: UIViewController, View {
         label.font = .systemFont(ofSize: 60, weight: .medium)
         label.textColor = .white
         label.textAlignment = .center
+        label.text = "Ticketoil"
         return label
     }()
     
@@ -63,6 +66,7 @@ final class AuthHomeViewController: UIViewController, View {
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
         button.setTitle("Еще не зарегистрировались?", for: .normal)
+        button.addTarget(self, action: #selector(registerButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -73,6 +77,10 @@ final class AuthHomeViewController: UIViewController, View {
     lazy var buttonsBottomLayoutGuide = UILayoutGuide()
     
     // MARK: - Actions
+    
+    @objc private func registerButtonDidTap() {
+        viewModel.registration()
+    }
     
     // MARK: - Lifecycle
     
@@ -118,6 +126,7 @@ final class AuthHomeViewController: UIViewController, View {
     // MARK: - Markup
     
     private func markup() {
+        view.backgroundColor = UIColor(hex: "#D61616")
         [titleLabel, textFieldContainerView, loginButton, registerButton]
             .forEach { view.addSubview($0) }
         [phoneNumberLabel, phoneNumberTextField, passwordLabel, passwordTextField]
@@ -126,7 +135,9 @@ final class AuthHomeViewController: UIViewController, View {
             .forEach { view.addLayoutGuide($0) }
         
         textFieldContainerView.snp.makeConstraints {
-            $0.center.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview()
+            $0.trailing.equalToSuperview()
         }
         
         phoneNumberLabel.snp.makeConstraints {

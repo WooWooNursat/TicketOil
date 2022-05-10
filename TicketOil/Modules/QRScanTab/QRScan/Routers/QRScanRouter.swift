@@ -1,13 +1,14 @@
 //
-//  AuthHome.swift
+//  QRScanRouter.swift
 //  TicketOil
 //
-//  Created by Nursat on 17.04.2022.
+//  Created by Nursat on 09.05.2022.
 //
 
+import Foundation
 import UIKit
 
-final class AuthHomeRouter: Router {
+final class QRScanRouter: Router {
     // MARK: - Enums
     
     enum PresentationContext {
@@ -15,7 +16,6 @@ final class AuthHomeRouter: Router {
     }
     
     enum RouteType {
-        case register
     }
     
     // MARK: - Properties
@@ -34,17 +34,8 @@ final class AuthHomeRouter: Router {
         
         switch context {
         case .default:
-            return
+            break
         }
-    }
-    
-    func setRootViewController() {
-        let vc = AuthHomeViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-        vc.viewModel = AuthHomeViewModel(router: self)
-        
-        let navVC = UINavigationController(rootViewController: vc)
-        baseViewController = vc
-        navVC.setRootViewController()
     }
     
     func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
@@ -59,10 +50,6 @@ final class AuthHomeRouter: Router {
         }
         
         switch routeType {
-        case .register:
-            let router = UserRegisterRouter()
-            let context = UserRegisterRouter.PresentationContext.default
-            router.present(on: baseVC, animated: true, context: context, completion: nil)
         }
     }
     

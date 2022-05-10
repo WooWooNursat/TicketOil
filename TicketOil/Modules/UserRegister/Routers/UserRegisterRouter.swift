@@ -34,7 +34,9 @@ final class UserRegisterRouter: Router {
         
         switch context {
         case .default:
-            break
+            let vc = UserRegisterViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
+            vc.viewModel = UserRegisterViewModel(router: self)
+            baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
     

@@ -7,7 +7,7 @@
 
 
 protocol AuthHomeViewModelProtocol: ViewModel {
-    
+    func registration()
 }
 
 final class AuthHomeViewModel: AuthHomeViewModelProtocol {
@@ -22,5 +22,10 @@ final class AuthHomeViewModel: AuthHomeViewModelProtocol {
     }
     
     // MARK: - Methods
+    
+    func registration() {
+        let context = AuthHomeRouter.RouteType.register
+        router.enqueueRoute(with: context)
+    }
 }
 
