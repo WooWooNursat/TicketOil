@@ -44,6 +44,11 @@
 		6D49E8A3282ADE58008E8793 /* MyCardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8A2282ADE58008E8793 /* MyCardsRouter.swift */; };
 		6D49E8A5282ADE6C008E8793 /* MyCardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8A4282ADE6C008E8793 /* MyCardsViewModel.swift */; };
 		6D49E8A7282ADE87008E8793 /* MyCardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8A6282ADE87008E8793 /* MyCardsViewController.swift */; };
+		6D49E8AD282C1880008E8793 /* AddCardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8AC282C1880008E8793 /* AddCardRouter.swift */; };
+		6D49E8AF282C1892008E8793 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8AE282C1892008E8793 /* AddCardViewModel.swift */; };
+		6D49E8B1282C18B8008E8793 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8B0282C18B8008E8793 /* AddCardViewController.swift */; };
+		6D49E8B5282D5926008E8793 /* MyCardTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8B4282D5926008E8793 /* MyCardTableCell.swift */; };
+		6D49E8B9282D594A008E8793 /* MyCardTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D49E8B8282D594A008E8793 /* MyCardTableCellViewModel.swift */; };
 		6D4C8C552814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C8C542814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift */; };
 		6D4C8C5728142966003BFA66 /* UserProfileMenuTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C8C5628142966003BFA66 /* UserProfileMenuTableCell.swift */; };
 		6D4C8C5B28155958003BFA66 /* UserProfileMenuRowType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4C8C5A28155958003BFA66 /* UserProfileMenuRowType.swift */; };
@@ -98,6 +103,11 @@
 		6D49E8A2282ADE58008E8793 /* MyCardsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsRouter.swift; sourceTree = "<group>"; };
 		6D49E8A4282ADE6C008E8793 /* MyCardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewModel.swift; sourceTree = "<group>"; };
 		6D49E8A6282ADE87008E8793 /* MyCardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardsViewController.swift; sourceTree = "<group>"; };
+		6D49E8AC282C1880008E8793 /* AddCardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardRouter.swift; sourceTree = "<group>"; };
+		6D49E8AE282C1892008E8793 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		6D49E8B0282C18B8008E8793 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
+		6D49E8B4282D5926008E8793 /* MyCardTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardTableCell.swift; sourceTree = "<group>"; };
+		6D49E8B8282D594A008E8793 /* MyCardTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCardTableCellViewModel.swift; sourceTree = "<group>"; };
 		6D4C8C542814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuTableCellViewModel.swift; sourceTree = "<group>"; };
 		6D4C8C5628142966003BFA66 /* UserProfileMenuTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuTableCell.swift; sourceTree = "<group>"; };
 		6D4C8C5A28155958003BFA66 /* UserProfileMenuRowType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuRowType.swift; sourceTree = "<group>"; };
@@ -399,6 +409,7 @@
 		6D49E89E282ADE3B008E8793 /* MyCards */ = {
 			isa = PBXGroup;
 			children = (
+				6D49E8B2282D5901008E8793 /* Submodules */,
 				6D49E8A1282ADE49008E8793 /* Routers */,
 				6D49E8A0282ADE46008E8793 /* ViewModels */,
 				6D49E89F282ADE43008E8793 /* Views */,
@@ -428,6 +439,73 @@
 				6D49E8A2282ADE58008E8793 /* MyCardsRouter.swift */,
 			);
 			path = Routers;
+			sourceTree = "<group>";
+		};
+		6D49E8A8282C184D008E8793 /* AddCard */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8AB282C1872008E8793 /* Routers */,
+				6D49E8AA282C186E008E8793 /* ViewModels */,
+				6D49E8A9282C1869008E8793 /* Views */,
+			);
+			path = AddCard;
+			sourceTree = "<group>";
+		};
+		6D49E8A9282C1869008E8793 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8B0282C18B8008E8793 /* AddCardViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6D49E8AA282C186E008E8793 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8AE282C1892008E8793 /* AddCardViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6D49E8AB282C1872008E8793 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8AC282C1880008E8793 /* AddCardRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6D49E8B2282D5901008E8793 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8B3282D5905008E8793 /* MyCardTableCell */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		6D49E8B3282D5905008E8793 /* MyCardTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8B7282D593B008E8793 /* ViewModels */,
+				6D49E8B6282D5939008E8793 /* Views */,
+			);
+			path = MyCardTableCell;
+			sourceTree = "<group>";
+		};
+		6D49E8B6282D5939008E8793 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8B4282D5926008E8793 /* MyCardTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6D49E8B7282D593B008E8793 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D49E8B8282D594A008E8793 /* MyCardTableCellViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		6D4C8C5828155925003BFA66 /* Submodules */ = {
@@ -528,6 +606,7 @@
 		6DEAE81D2811D64400670BD8 /* UserProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				6D49E8A8282C184D008E8793 /* AddCard */,
 				6D49E89E282ADE3B008E8793 /* MyCards */,
 				6DEAE81E2811D66000670BD8 /* UserProfileMenu */,
 			);
@@ -724,9 +803,11 @@
 				6DEAE8232811D67D00670BD8 /* UserProfileMenuRouter.swift in Sources */,
 				6DEAE81C2811D24000670BD8 /* MainTabBarController.swift in Sources */,
 				6D05B84E280F183800FFF7C9 /* View.swift in Sources */,
+				6D49E8AF282C1892008E8793 /* AddCardViewModel.swift in Sources */,
 				6D05B850280F189100FFF7C9 /* AuthHomeViewController.swift in Sources */,
 				6D2E1437280C0E6A003C4894 /* L10n.swift in Sources */,
 				6DEAE8272811D6AF00670BD8 /* UserProfileMenuViewController.swift in Sources */,
+				6D49E8AD282C1880008E8793 /* AddCardRouter.swift in Sources */,
 				6D05B844280C359100FFF7C9 /* AuthHomeRouter.swift in Sources */,
 				6D49E89C282A8E5F008E8793 /* ViewController.swift in Sources */,
 				6D05B869281073A900FFF7C9 /* Code.swift in Sources */,
@@ -750,6 +831,7 @@
 				6D2E1444280C1210003C4894 /* StringExtension.swift in Sources */,
 				6D49E8A3282ADE58008E8793 /* MyCardsRouter.swift in Sources */,
 				6D05B86F28107F3D00FFF7C9 /* UserRegisterRouter.swift in Sources */,
+				6D49E8B1282C18B8008E8793 /* AddCardViewController.swift in Sources */,
 				6D49E88C2828015B008E8793 /* AppCoordinator.swift in Sources */,
 				6D2E1441280C119E003C4894 /* Language.swift in Sources */,
 				6D05B85F2810704300FFF7C9 /* NetworkProvider.swift in Sources */,
@@ -757,6 +839,7 @@
 				6D05B857280F217E00FFF7C9 /* BaseTextField.swift in Sources */,
 				6D2E1439280C0E73003C4894 /* Assets.swift in Sources */,
 				6D05B87128107F5000FFF7C9 /* UserRegisterViewModel.swift in Sources */,
+				6D49E8B5282D5926008E8793 /* MyCardTableCell.swift in Sources */,
 				6D05B846280C35DB00FFF7C9 /* AuthHomeViewModel.swift in Sources */,
 				6D05B861281070C400FFF7C9 /* JSONDecoderExtension.swift in Sources */,
 				6D05B87328107F7200FFF7C9 /* UserRegisterViewController.swift in Sources */,
@@ -764,6 +847,7 @@
 				6D2E1448280C1C2B003C4894 /* UIColorExtension.swift in Sources */,
 				6D49E89528293514008E8793 /* QRScanViewModel.swift in Sources */,
 				6D05B84A280F171C00FFF7C9 /* Router.swift in Sources */,
+				6D49E8B9282D594A008E8793 /* MyCardTableCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

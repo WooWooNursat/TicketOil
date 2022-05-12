@@ -39,6 +39,7 @@ final class UserRegisterViewController: ViewController, View {
     lazy var phoneNumberTextField: BaseTextField = {
         let textField = BaseTextField(size: .medium)
         textField.placeholder = "Введите номер телефона"
+        textField.keyboardType = .phonePad
         return textField
     }()
     

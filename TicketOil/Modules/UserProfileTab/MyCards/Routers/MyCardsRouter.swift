@@ -16,6 +16,7 @@ final class MyCardsRouter: Router {
     }
     
     enum RouteType {
+        case addCard
     }
     
     // MARK: - Properties
@@ -34,11 +35,13 @@ final class MyCardsRouter: Router {
         
         switch context {
         case .default:
-            break
+            let vc = MyCardsViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
+            vc.viewModel = MyCardsViewModel(router: self)
+            baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
     
-    func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
+    func enqueueRoute(with context: Any?, animated: Bool, completion: (() -> Void)?) {
         guard let routeType = context as? RouteType else {
             assertionFailure("The route type mismatch")
             return
@@ -50,6 +53,10 @@ final class MyCardsRouter: Router {
         }
         
         switch routeType {
+        case .addCard:
+            let router = AddCardRouter()
+            let context = AddCardRouter.PresentationContext.default
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }
     

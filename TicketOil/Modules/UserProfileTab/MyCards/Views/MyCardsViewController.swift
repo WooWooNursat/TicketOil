@@ -17,7 +17,26 @@ final class MyCardsViewController: ViewController, View {
     
     // MARK: - Outlets
     
+    lazy var tableView: UITableView = {
+        let view = UITableView()
+        view.tableFooterView = UIView()
+        view.rowHeight = UITableView.automaticDimension
+        view.showsVerticalScrollIndicator = false
+        view.estimatedRowHeight = 300
+        view.contentInsetAdjustmentBehavior = .always
+        view.backgroundColor = UIColor(hex: "#D61616")
+        view.delegate = self
+        view.dataSource = self
+        view.register(cellType: MyCardTableCell.self)
+        
+        return view
+    }()
+    
     // MARK: - Actions
+    
+    @objc private func rightBarButtonDidTap() {
+        viewModel.addCard()
+    }
     
     // MARK: - Lifecycle
     
@@ -53,10 +72,12 @@ final class MyCardsViewController: ViewController, View {
         navigationBarConfigurator.configure(
             navigationBar: navigationBar,
             with: .default(
-                prefersLargeTitles: false,
+                prefersLargeTitles: true,
                 needsToDisplayShadow: false
             )
         )
+        navigationItem.title = "Банковские карты"
+        navigationItem.rightBarButtonItem = .init(title: "Добавить", style: .plain, target: self, action: #selector(rightBarButtonDidTap))
     }
     
     private func subscribe() {
@@ -66,6 +87,17 @@ final class MyCardsViewController: ViewController, View {
     // MARK: - Markup
     
     private func markup() {
-        
+        view = tableView
+    }
+}
+
+extension MyCardsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MyCardTableCell.self)
+        return cell
     }
 }

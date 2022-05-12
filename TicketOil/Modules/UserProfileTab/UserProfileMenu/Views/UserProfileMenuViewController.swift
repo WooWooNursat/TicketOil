@@ -171,5 +171,12 @@ extension UserProfileMenuViewController: UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        switch viewModel.cellViewModels[indexPath.section][indexPath.row].type.value {
+        case .myCards:
+            viewModel.openMyCards()
+        default:
+            return
+        }
     }
 }

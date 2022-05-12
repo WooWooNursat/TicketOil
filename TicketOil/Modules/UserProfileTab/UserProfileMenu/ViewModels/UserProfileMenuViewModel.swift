@@ -12,6 +12,8 @@ import RxCocoa
 protocol UserProfileMenuViewModelProtocol: ViewModel {
     var cellViewModels: [[UserProfileMenuTableCellViewModelProtocol]] { get }
     var update: BehaviorRelay<Void> { get }
+    
+    func openMyCards()
 }
 
 final class UserProfileMenuViewModel: UserProfileMenuViewModelProtocol {
@@ -36,5 +38,10 @@ final class UserProfileMenuViewModel: UserProfileMenuViewModelProtocol {
     }
     
     // MARK: - Methods
+    
+    func openMyCards() {
+        let context = UserProfileMenuRouter.RouteType.myCards
+        router.enqueueRoute(with: context)
+    }
 }
 

@@ -1,14 +1,14 @@
 //
-//  UserProfileMenuRouter.swift
+//  AddCardRouter.swift
 //  TicketOil
 //
-//  Created by Nursat on 22.04.2022.
+//  Created by Nursat on 11.05.2022.
 //
 
 import Foundation
 import UIKit
 
-final class UserProfileMenuRouter: Router {
+final class AddCardRouter: Router {
     // MARK: - Enums
     
     enum PresentationContext {
@@ -16,7 +16,6 @@ final class UserProfileMenuRouter: Router {
     }
     
     enum RouteType {
-        case myCards
     }
     
     // MARK: - Properties
@@ -35,11 +34,13 @@ final class UserProfileMenuRouter: Router {
         
         switch context {
         case .default:
-            break
+            let vc = AddCardViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
+            vc.viewModel = AddCardViewModel(router: self)
+            baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
     
-    func enqueueRoute(with context: Any?, animated: Bool, completion: (() -> Void)?) {
+    func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
         guard let routeType = context as? RouteType else {
             assertionFailure("The route type mismatch")
             return
@@ -51,14 +52,10 @@ final class UserProfileMenuRouter: Router {
         }
         
         switch routeType {
-        case .myCards:
-            let router = MyCardsRouter()
-            let context = MyCardsRouter.PresentationContext.default
-            router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }
     
     func dismiss(animated: Bool, completion: (() -> Void)?) {
-        baseViewController?.dismiss(animated: animated, completion: completion)
+        baseViewController?.navigationController?.popViewController(animated: animated)
     }
 }
