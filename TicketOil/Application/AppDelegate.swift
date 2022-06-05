@@ -9,6 +9,7 @@ import UIKit
 import AVFoundation
 import Kingfisher
 import IQKeyboardManagerSwift
+import YandexMapsMobile
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -35,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         configureAVPlayback()
         configureImageDownloader()
         configureKeyboardManager()
+        configureMapKit()
     }
     
     private func configureNavigationBar() {
@@ -79,5 +81,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         keyboardManager.shouldResignOnTouchOutside = true
         keyboardManager.keyboardDistanceFromTextField = 88
         keyboardManager.toolbarDoneBarButtonItemText = "Скрыть"
+    }
+    
+    private func configureMapKit() {
+        YMKMapKit.setApiKey("ea0fa71b-8267-419c-a851-0a9f04f04c08")
+        YMKMapKit.sharedInstance()
     }
 }

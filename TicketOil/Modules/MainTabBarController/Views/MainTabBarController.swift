@@ -14,15 +14,14 @@ final class MainTabBarController: UITabBarController {
     
     // MARK: - Outlets
     
-    lazy var userProfileVC: UserProfileMenuViewController = {
-        let vc = UserProfileMenuViewController(navigationBarConfiguration: DIResolver.resolve(NavigationBarConfigurator.self)!)
-        let router = UserProfileMenuRouter()
+    lazy var searchVC: SearchMapViewController = {
+        let vc = SearchMapViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
+        let router = SearchMapRouter()
         router.baseViewController = vc
-        vc.viewModel = UserProfileMenuViewModel(router: router)
+        vc.viewModel = SearchMapViewModel(router: router)
         
-        let item = UITabBarItem(title: "Профиль", image: UIImage(), selectedImage: nil)
+        let item = UITabBarItem(title: "Поиск", image: UIImage(), selectedImage: nil)
         vc.tabBarItem = item
-        
         return vc
     }()
     
@@ -38,6 +37,18 @@ final class MainTabBarController: UITabBarController {
         return vc
     }()
     
+    lazy var userProfileVC: UserProfileMenuViewController = {
+        let vc = UserProfileMenuViewController(navigationBarConfiguration: DIResolver.resolve(NavigationBarConfigurator.self)!)
+        let router = UserProfileMenuRouter()
+        router.baseViewController = vc
+        vc.viewModel = UserProfileMenuViewModel(router: router)
+        
+        let item = UITabBarItem(title: "Профиль", image: UIImage(), selectedImage: nil)
+        vc.tabBarItem = item
+        
+        return vc
+    }()
+    
     // MARK: - Actions
     
     // MARK: - Lifecycle
@@ -46,8 +57,9 @@ final class MainTabBarController: UITabBarController {
         super.init(nibName: nil, bundle: nil)
         tabBar.itemPositioning = .fill
         viewControllers = [
-            UINavigationController(rootViewController: userProfileVC),
-            UINavigationController(rootViewController: qrScanVC)
+            UINavigationController(rootViewController: searchVC),
+            UINavigationController(rootViewController: qrScanVC),
+            UINavigationController(rootViewController: userProfileVC)
         ]
     }
     

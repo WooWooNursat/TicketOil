@@ -28,6 +28,7 @@ PODS:
   - SwiftDate (6.3.1)
   - SwiftGen (6.5.1)
   - Swinject (2.7.1)
+  - YandexMapsMobile (4.1.0-lite)
 
 DEPENDENCIES:
   - Alamofire (= 5.4.1)
@@ -43,10 +44,12 @@ DEPENDENCIES:
   - SwiftDate
   - SwiftGen
   - Swinject (= 2.7.1)
+  - YandexMapsMobile (= 4.1.0-lite)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - SwiftDate
+    - YandexMapsMobile
   trunk:
     - Alamofire
     - Cache
@@ -77,7 +80,8 @@ SPEC CHECKSUMS:
   SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   SwiftGen: a6d22010845f08fe18fbdf3a07a8e380fd22e0ea
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  YandexMapsMobile: 549f83d16cb7d1ea73031163722852f408b85841
 
-PODFILE CHECKSUM: b753a2402cf151526e3fa19a2023f3eb2b81ae63
+PODFILE CHECKSUM: b6ac7fcc00df83a9fe211ce88873aa5cf155ffdb
 
-COCOAPODS: 1.11.2
+COCOAPODS: 1.11.3

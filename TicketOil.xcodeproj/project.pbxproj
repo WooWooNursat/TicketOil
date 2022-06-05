@@ -56,6 +56,31 @@
 		6D8643A3280BD4D7007EA1A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8643A2280BD4D7007EA1A9 /* SceneDelegate.swift */; };
 		6D8643AA280BD4D8007EA1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8643A9280BD4D8007EA1A9 /* Assets.xcassets */; };
 		6D8643BB280BEC23007EA1A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D8643BD280BEC23007EA1A9 /* Localizable.strings */; };
+		6DB83C2A284222B200BA93A8 /* ColumnSelectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C29284222B200BA93A8 /* ColumnSelectRouter.swift */; };
+		6DB83C2C284222CD00BA93A8 /* ColumnSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C2B284222CD00BA93A8 /* ColumnSelectViewModel.swift */; };
+		6DB83C2E284222EE00BA93A8 /* ColumnSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C2D284222EE00BA93A8 /* ColumnSelectViewController.swift */; };
+		6DB83C342842938700BA93A8 /* GasolineSelectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C332842938700BA93A8 /* GasolineSelectRouter.swift */; };
+		6DB83C36284293A300BA93A8 /* GasolineSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C35284293A300BA93A8 /* GasolineSelectViewModel.swift */; };
+		6DB83C38284293CE00BA93A8 /* GasolineSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C37284293CE00BA93A8 /* GasolineSelectViewController.swift */; };
+		6DD6A8B9284A8AAC009C36A1 /* PaymentSucessRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8B8284A8AAC009C36A1 /* PaymentSucessRouter.swift */; };
+		6DD6A8BB284A8AC4009C36A1 /* PaymentSuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8BA284A8AC4009C36A1 /* PaymentSuccessViewModel.swift */; };
+		6DD6A8BD284A8AF0009C36A1 /* PaymentSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8BC284A8AF0009C36A1 /* PaymentSuccessViewController.swift */; };
+		6DD6A8C3284B4213009C36A1 /* UserProfileEditRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8C2284B4213009C36A1 /* UserProfileEditRouter.swift */; };
+		6DD6A8C5284B4228009C36A1 /* UserProfileEditViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8C4284B4228009C36A1 /* UserProfileEditViewModel.swift */; };
+		6DD6A8C7284B4246009C36A1 /* UserProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8C6284B4246009C36A1 /* UserProfileEditViewController.swift */; };
+		6DD6A8CB284B4286009C36A1 /* UserProfileDataRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8CA284B4286009C36A1 /* UserProfileDataRow.swift */; };
+		6DD6A8D0284B4307009C36A1 /* UserProfileEditTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8CF284B4307009C36A1 /* UserProfileEditTableCellViewModel.swift */; };
+		6DD6A8D2284B4320009C36A1 /* UserProfileEditTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8D1284B4320009C36A1 /* UserProfileEditTableCell.swift */; };
+		6DD6A8D9284B5D91009C36A1 /* SearchMapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8D8284B5D91009C36A1 /* SearchMapRouter.swift */; };
+		6DD6A8DB284B5DA2009C36A1 /* SearchMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8DA284B5DA2009C36A1 /* SearchMapViewModel.swift */; };
+		6DD6A8DD284B5DBC009C36A1 /* SearchMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8DC284B5DBC009C36A1 /* SearchMapViewController.swift */; };
+		6DD6A8E0284B6CA3009C36A1 /* GasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8DF284B6CA3009C36A1 /* GasStation.swift */; };
+		6DD6A8E4284B6CE2009C36A1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8E3284B6CE2009C36A1 /* Location.swift */; };
+		6DD6A8EA284C9F90009C36A1 /* GasStationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8E9284C9F90009C36A1 /* GasStationSearchViewModel.swift */; };
+		6DD6A8EC284C9FC1009C36A1 /* GasStationSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8EB284C9FC1009C36A1 /* GasStationSearchController.swift */; };
+		6DD6A8F2284CA5E5009C36A1 /* GasStationSearchTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8F1284CA5E5009C36A1 /* GasStationSearchTableCellViewModel.swift */; };
+		6DD6A8F4284CA5FD009C36A1 /* GasStationSearchTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8F3284CA5FD009C36A1 /* GasStationSearchTableCell.swift */; };
+		6DD6A8F8284CB895009C36A1 /* SearchControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD6A8F7284CB895009C36A1 /* SearchControllerFactory.swift */; };
 		6DEAE81C2811D24000670BD8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEAE81B2811D24000670BD8 /* MainTabBarController.swift */; };
 		6DEAE8232811D67D00670BD8 /* UserProfileMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEAE8222811D67D00670BD8 /* UserProfileMenuRouter.swift */; };
 		6DEAE8252811D68F00670BD8 /* UserProfileMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEAE8242811D68F00670BD8 /* UserProfileMenuViewModel.swift */; };
@@ -118,6 +143,31 @@
 		6D8643AE280BD4D8007EA1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D8643BC280BEC23007EA1A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D8643BE280BEC24007EA1A9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6DB83C29284222B200BA93A8 /* ColumnSelectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnSelectRouter.swift; sourceTree = "<group>"; };
+		6DB83C2B284222CD00BA93A8 /* ColumnSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnSelectViewModel.swift; sourceTree = "<group>"; };
+		6DB83C2D284222EE00BA93A8 /* ColumnSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnSelectViewController.swift; sourceTree = "<group>"; };
+		6DB83C332842938700BA93A8 /* GasolineSelectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectRouter.swift; sourceTree = "<group>"; };
+		6DB83C35284293A300BA93A8 /* GasolineSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectViewModel.swift; sourceTree = "<group>"; };
+		6DB83C37284293CE00BA93A8 /* GasolineSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectViewController.swift; sourceTree = "<group>"; };
+		6DD6A8B8284A8AAC009C36A1 /* PaymentSucessRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSucessRouter.swift; sourceTree = "<group>"; };
+		6DD6A8BA284A8AC4009C36A1 /* PaymentSuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessViewModel.swift; sourceTree = "<group>"; };
+		6DD6A8BC284A8AF0009C36A1 /* PaymentSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessViewController.swift; sourceTree = "<group>"; };
+		6DD6A8C2284B4213009C36A1 /* UserProfileEditRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditRouter.swift; sourceTree = "<group>"; };
+		6DD6A8C4284B4228009C36A1 /* UserProfileEditViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditViewModel.swift; sourceTree = "<group>"; };
+		6DD6A8C6284B4246009C36A1 /* UserProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditViewController.swift; sourceTree = "<group>"; };
+		6DD6A8CA284B4286009C36A1 /* UserProfileDataRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileDataRow.swift; sourceTree = "<group>"; };
+		6DD6A8CF284B4307009C36A1 /* UserProfileEditTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditTableCellViewModel.swift; sourceTree = "<group>"; };
+		6DD6A8D1284B4320009C36A1 /* UserProfileEditTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileEditTableCell.swift; sourceTree = "<group>"; };
+		6DD6A8D8284B5D91009C36A1 /* SearchMapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapRouter.swift; sourceTree = "<group>"; };
+		6DD6A8DA284B5DA2009C36A1 /* SearchMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapViewModel.swift; sourceTree = "<group>"; };
+		6DD6A8DC284B5DBC009C36A1 /* SearchMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMapViewController.swift; sourceTree = "<group>"; };
+		6DD6A8DF284B6CA3009C36A1 /* GasStation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStation.swift; sourceTree = "<group>"; };
+		6DD6A8E3284B6CE2009C36A1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6DD6A8E9284C9F90009C36A1 /* GasStationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchViewModel.swift; sourceTree = "<group>"; };
+		6DD6A8EB284C9FC1009C36A1 /* GasStationSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchController.swift; sourceTree = "<group>"; };
+		6DD6A8F1284CA5E5009C36A1 /* GasStationSearchTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchTableCellViewModel.swift; sourceTree = "<group>"; };
+		6DD6A8F3284CA5FD009C36A1 /* GasStationSearchTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationSearchTableCell.swift; sourceTree = "<group>"; };
+		6DD6A8F7284CB895009C36A1 /* SearchControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchControllerFactory.swift; sourceTree = "<group>"; };
 		6DEAE81B2811D24000670BD8 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		6DEAE8222811D67D00670BD8 /* UserProfileMenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuRouter.swift; sourceTree = "<group>"; };
 		6DEAE8242811D68F00670BD8 /* UserProfileMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileMenuViewModel.swift; sourceTree = "<group>"; };
@@ -311,6 +361,8 @@
 		6D2E143F280C1197003C4894 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6DD6A8E1284B6CD7009C36A1 /* Location */,
+				6DD6A8DE284B6C9B009C36A1 /* GasStation */,
 				6D05B8672810739E00FFF7C9 /* Network */,
 				6D05B8662810739100FFF7C9 /* Common */,
 			);
@@ -546,6 +598,7 @@
 		6D86439F280BD4D7007EA1A9 /* TicketOil */ = {
 			isa = PBXGroup;
 			children = (
+				6DD6A8F5284CB884009C36A1 /* Factories */,
 				6D8643B4280BEA80007EA1A9 /* Application */,
 				6D2E1442280C11FD003C4894 /* Extensions */,
 				6D05B851280F1E9800FFF7C9 /* UIKit */,
@@ -583,6 +636,8 @@
 		6D8643C0280BEC88007EA1A9 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6DD6A8D3284B5D67009C36A1 /* SearchTab */,
+				6DB83C242842225E00BA93A8 /* PaymentFlow */,
 				6D49E88D282934CA008E8793 /* QRScanTab */,
 				6DEAE81D2811D64400670BD8 /* UserProfileTab */,
 				6D05B8742811D0D000FFF7C9 /* MainTabBarController */,
@@ -603,9 +658,333 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
+		6DB83C242842225E00BA93A8 /* PaymentFlow */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C39284A89E300BA93A8 /* PaymentSuccess */,
+				6DB83C2F2842936D00BA93A8 /* GasolineSelect */,
+				6DB83C252842229500BA93A8 /* ColumnSelect */,
+			);
+			path = PaymentFlow;
+			sourceTree = "<group>";
+		};
+		6DB83C252842229500BA93A8 /* ColumnSelect */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C28284222A400BA93A8 /* Routers */,
+				6DB83C27284222A100BA93A8 /* ViewModels */,
+				6DB83C262842229D00BA93A8 /* Views */,
+			);
+			path = ColumnSelect;
+			sourceTree = "<group>";
+		};
+		6DB83C262842229D00BA93A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C2D284222EE00BA93A8 /* ColumnSelectViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DB83C27284222A100BA93A8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C2B284222CD00BA93A8 /* ColumnSelectViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DB83C28284222A400BA93A8 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C29284222B200BA93A8 /* ColumnSelectRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6DB83C2F2842936D00BA93A8 /* GasolineSelect */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C322842937700BA93A8 /* Routers */,
+				6DB83C312842937400BA93A8 /* ViewModels */,
+				6DB83C302842937200BA93A8 /* Views */,
+			);
+			path = GasolineSelect;
+			sourceTree = "<group>";
+		};
+		6DB83C302842937200BA93A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C37284293CE00BA93A8 /* GasolineSelectViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DB83C312842937400BA93A8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C35284293A300BA93A8 /* GasolineSelectViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DB83C322842937700BA93A8 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C332842938700BA93A8 /* GasolineSelectRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6DB83C39284A89E300BA93A8 /* PaymentSuccess */ = {
+			isa = PBXGroup;
+			children = (
+				6DB83C3C284A89F400BA93A8 /* Routers */,
+				6DB83C3B284A89EE00BA93A8 /* ViewModels */,
+				6DB83C3A284A89EC00BA93A8 /* Views */,
+			);
+			path = PaymentSuccess;
+			sourceTree = "<group>";
+		};
+		6DB83C3A284A89EC00BA93A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8BC284A8AF0009C36A1 /* PaymentSuccessViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DB83C3B284A89EE00BA93A8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8BA284A8AC4009C36A1 /* PaymentSuccessViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DB83C3C284A89F400BA93A8 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8B8284A8AAC009C36A1 /* PaymentSucessRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6DD6A8BE284B4201009C36A1 /* UserProfileEdit */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8C8284B4274009C36A1 /* Submodules */,
+				6DD6A8C1284B4209009C36A1 /* Routers */,
+				6DD6A8C0284B4207009C36A1 /* ViewModels */,
+				6DD6A8BF284B4205009C36A1 /* Views */,
+			);
+			path = UserProfileEdit;
+			sourceTree = "<group>";
+		};
+		6DD6A8BF284B4205009C36A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8C6284B4246009C36A1 /* UserProfileEditViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DD6A8C0284B4207009C36A1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8C4284B4228009C36A1 /* UserProfileEditViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DD6A8C1284B4209009C36A1 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8C2284B4213009C36A1 /* UserProfileEditRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6DD6A8C8284B4274009C36A1 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8CC284B42F2009C36A1 /* UserProfileEditTableCell */,
+				6DD6A8C9284B4278009C36A1 /* UserProfileDataRow */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		6DD6A8C9284B4278009C36A1 /* UserProfileDataRow */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8CA284B4286009C36A1 /* UserProfileDataRow.swift */,
+			);
+			path = UserProfileDataRow;
+			sourceTree = "<group>";
+		};
+		6DD6A8CC284B42F2009C36A1 /* UserProfileEditTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8CE284B42FD009C36A1 /* ViewModels */,
+				6DD6A8CD284B42F9009C36A1 /* Views */,
+			);
+			path = UserProfileEditTableCell;
+			sourceTree = "<group>";
+		};
+		6DD6A8CD284B42F9009C36A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8D1284B4320009C36A1 /* UserProfileEditTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DD6A8CE284B42FD009C36A1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8CF284B4307009C36A1 /* UserProfileEditTableCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DD6A8D3284B5D67009C36A1 /* SearchTab */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8D4284B5D7B009C36A1 /* SearchMap */,
+			);
+			path = SearchTab;
+			sourceTree = "<group>";
+		};
+		6DD6A8D4284B5D7B009C36A1 /* SearchMap */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8E5284C9F56009C36A1 /* Submodules */,
+				6DD6A8D7284B5D86009C36A1 /* Routers */,
+				6DD6A8D6284B5D84009C36A1 /* ViewModels */,
+				6DD6A8D5284B5D80009C36A1 /* Views */,
+			);
+			path = SearchMap;
+			sourceTree = "<group>";
+		};
+		6DD6A8D5284B5D80009C36A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8DC284B5DBC009C36A1 /* SearchMapViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DD6A8D6284B5D84009C36A1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8DA284B5DA2009C36A1 /* SearchMapViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DD6A8D7284B5D86009C36A1 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8D8284B5D91009C36A1 /* SearchMapRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6DD6A8DE284B6C9B009C36A1 /* GasStation */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8DF284B6CA3009C36A1 /* GasStation.swift */,
+			);
+			path = GasStation;
+			sourceTree = "<group>";
+		};
+		6DD6A8E1284B6CD7009C36A1 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8E3284B6CE2009C36A1 /* Location.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		6DD6A8E5284C9F56009C36A1 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8E6284C9F59009C36A1 /* GasStationSearchController */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		6DD6A8E6284C9F59009C36A1 /* GasStationSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8ED284CA5B7009C36A1 /* Submodules */,
+				6DD6A8E8284C9F80009C36A1 /* ViewModels */,
+				6DD6A8E7284C9F7D009C36A1 /* Views */,
+			);
+			path = GasStationSearchController;
+			sourceTree = "<group>";
+		};
+		6DD6A8E7284C9F7D009C36A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8EB284C9FC1009C36A1 /* GasStationSearchController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DD6A8E8284C9F80009C36A1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8E9284C9F90009C36A1 /* GasStationSearchViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DD6A8ED284CA5B7009C36A1 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8EE284CA5BE009C36A1 /* GasStationSearchTableCell */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		6DD6A8EE284CA5BE009C36A1 /* GasStationSearchTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8F0284CA5DC009C36A1 /* ViewModels */,
+				6DD6A8EF284CA5D9009C36A1 /* Views */,
+			);
+			path = GasStationSearchTableCell;
+			sourceTree = "<group>";
+		};
+		6DD6A8EF284CA5D9009C36A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8F3284CA5FD009C36A1 /* GasStationSearchTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6DD6A8F0284CA5DC009C36A1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8F1284CA5E5009C36A1 /* GasStationSearchTableCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6DD6A8F5284CB884009C36A1 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				6DD6A8F7284CB895009C36A1 /* SearchControllerFactory.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		6DEAE81D2811D64400670BD8 /* UserProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				6DD6A8BE284B4201009C36A1 /* UserProfileEdit */,
 				6D49E8A8282C184D008E8793 /* AddCard */,
 				6D49E89E282ADE3B008E8793 /* MyCards */,
 				6DEAE81E2811D66000670BD8 /* UserProfileMenu */,
@@ -694,6 +1073,7 @@
 				6D86439A280BD4D7007EA1A9 /* Frameworks */,
 				6D86439B280BD4D7007EA1A9 /* Resources */,
 				33809CF06FE85864B1714F73 /* [CP] Embed Pods Frameworks */,
+				CD567C271A4C6B477A70E288 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -792,6 +1172,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CD567C271A4C6B477A70E288 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TicketOil/Pods-TicketOil-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TicketOil/Pods-TicketOil-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TicketOil/Pods-TicketOil-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -803,10 +1200,15 @@
 				6DEAE8232811D67D00670BD8 /* UserProfileMenuRouter.swift in Sources */,
 				6DEAE81C2811D24000670BD8 /* MainTabBarController.swift in Sources */,
 				6D05B84E280F183800FFF7C9 /* View.swift in Sources */,
+				6DB83C2A284222B200BA93A8 /* ColumnSelectRouter.swift in Sources */,
 				6D49E8AF282C1892008E8793 /* AddCardViewModel.swift in Sources */,
 				6D05B850280F189100FFF7C9 /* AuthHomeViewController.swift in Sources */,
 				6D2E1437280C0E6A003C4894 /* L10n.swift in Sources */,
+				6DB83C2E284222EE00BA93A8 /* ColumnSelectViewController.swift in Sources */,
+				6DD6A8B9284A8AAC009C36A1 /* PaymentSucessRouter.swift in Sources */,
+				6DD6A8F2284CA5E5009C36A1 /* GasStationSearchTableCellViewModel.swift in Sources */,
 				6DEAE8272811D6AF00670BD8 /* UserProfileMenuViewController.swift in Sources */,
+				6DD6A8C3284B4213009C36A1 /* UserProfileEditRouter.swift in Sources */,
 				6D49E8AD282C1880008E8793 /* AddCardRouter.swift in Sources */,
 				6D05B844280C359100FFF7C9 /* AuthHomeRouter.swift in Sources */,
 				6D49E89C282A8E5F008E8793 /* ViewController.swift in Sources */,
@@ -818,20 +1220,35 @@
 				6D4C8C5728142966003BFA66 /* UserProfileMenuTableCell.swift in Sources */,
 				6D2E1446280C1A8E003C4894 /* LaunchScreenViewController.swift in Sources */,
 				6D49E8A7282ADE87008E8793 /* MyCardsViewController.swift in Sources */,
+				6DD6A8DB284B5DA2009C36A1 /* SearchMapViewModel.swift in Sources */,
+				6DD6A8E0284B6CA3009C36A1 /* GasStation.swift in Sources */,
+				6DD6A8D2284B4320009C36A1 /* UserProfileEditTableCell.swift in Sources */,
+				6DD6A8C5284B4228009C36A1 /* UserProfileEditViewModel.swift in Sources */,
 				6D8643A1280BD4D7007EA1A9 /* AppDelegate.swift in Sources */,
 				6D49E8A5282ADE6C008E8793 /* MyCardsViewModel.swift in Sources */,
 				6D05B8632810713F00FFF7C9 /* DictionaryExtension.swift in Sources */,
+				6DB83C2C284222CD00BA93A8 /* ColumnSelectViewModel.swift in Sources */,
+				6DD6A8D0284B4307009C36A1 /* UserProfileEditTableCellViewModel.swift in Sources */,
 				6D05B85D281069AF00FFF7C9 /* NetworkInterceptor.swift in Sources */,
+				6DD6A8BD284A8AF0009C36A1 /* PaymentSuccessViewController.swift in Sources */,
+				6DD6A8EC284C9FC1009C36A1 /* GasStationSearchController.swift in Sources */,
 				6D2E143B280C0EC0003C4894 /* Resolver.swift in Sources */,
 				6DEAE8252811D68F00670BD8 /* UserProfileMenuViewModel.swift in Sources */,
+				6DB83C36284293A300BA93A8 /* GasolineSelectViewModel.swift in Sources */,
+				6DD6A8E4284B6CE2009C36A1 /* Location.swift in Sources */,
 				6D05B865281072E100FFF7C9 /* UserError.swift in Sources */,
+				6DD6A8DD284B5DBC009C36A1 /* SearchMapViewController.swift in Sources */,
 				6D05B85A280F292000FFF7C9 /* BaseButton.swift in Sources */,
+				6DD6A8CB284B4286009C36A1 /* UserProfileDataRow.swift in Sources */,
+				6DD6A8F8284CB895009C36A1 /* SearchControllerFactory.swift in Sources */,
 				6D4C8C552814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift in Sources */,
 				6D05B84C280F182100FFF7C9 /* ViewModel.swift in Sources */,
+				6DB83C38284293CE00BA93A8 /* GasolineSelectViewController.swift in Sources */,
 				6D2E1444280C1210003C4894 /* StringExtension.swift in Sources */,
 				6D49E8A3282ADE58008E8793 /* MyCardsRouter.swift in Sources */,
 				6D05B86F28107F3D00FFF7C9 /* UserRegisterRouter.swift in Sources */,
 				6D49E8B1282C18B8008E8793 /* AddCardViewController.swift in Sources */,
+				6DB83C342842938700BA93A8 /* GasolineSelectRouter.swift in Sources */,
 				6D49E88C2828015B008E8793 /* AppCoordinator.swift in Sources */,
 				6D2E1441280C119E003C4894 /* Language.swift in Sources */,
 				6D05B85F2810704300FFF7C9 /* NetworkProvider.swift in Sources */,
@@ -839,15 +1256,20 @@
 				6D05B857280F217E00FFF7C9 /* BaseTextField.swift in Sources */,
 				6D2E1439280C0E73003C4894 /* Assets.swift in Sources */,
 				6D05B87128107F5000FFF7C9 /* UserRegisterViewModel.swift in Sources */,
+				6DD6A8BB284A8AC4009C36A1 /* PaymentSuccessViewModel.swift in Sources */,
 				6D49E8B5282D5926008E8793 /* MyCardTableCell.swift in Sources */,
 				6D05B846280C35DB00FFF7C9 /* AuthHomeViewModel.swift in Sources */,
+				6DD6A8C7284B4246009C36A1 /* UserProfileEditViewController.swift in Sources */,
 				6D05B861281070C400FFF7C9 /* JSONDecoderExtension.swift in Sources */,
 				6D05B87328107F7200FFF7C9 /* UserRegisterViewController.swift in Sources */,
+				6DD6A8EA284C9F90009C36A1 /* GasStationSearchViewModel.swift in Sources */,
 				6D8643A3280BD4D7007EA1A9 /* SceneDelegate.swift in Sources */,
 				6D2E1448280C1C2B003C4894 /* UIColorExtension.swift in Sources */,
 				6D49E89528293514008E8793 /* QRScanViewModel.swift in Sources */,
+				6DD6A8D9284B5D91009C36A1 /* SearchMapRouter.swift in Sources */,
 				6D05B84A280F171C00FFF7C9 /* Router.swift in Sources */,
 				6D49E8B9282D594A008E8793 /* MyCardTableCellViewModel.swift in Sources */,
+				6DD6A8F4284CA5FD009C36A1 /* GasStationSearchTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

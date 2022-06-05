@@ -21,6 +21,7 @@ target 'TicketOil' do
   pod 'IQKeyboardManagerSwift'
   pod 'Cache', '~> 6'
   pod 'SwiftDate'
+  pod 'YandexMapsMobile', '4.1.0-lite'
 
 end
 
