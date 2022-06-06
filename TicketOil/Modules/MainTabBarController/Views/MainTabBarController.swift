@@ -14,6 +14,17 @@ final class MainTabBarController: UITabBarController {
     
     // MARK: - Outlets
     
+    lazy var homeVC: AllGasStationsViewController = {
+        let vc = AllGasStationsViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
+        let router = AllGasStationsRouter()
+        router.baseViewController = vc
+        vc.viewModel = AllGasStationsViewModel(router: router)
+        
+        let item = UITabBarItem(title: "Главная", image: UIImage(), selectedImage: nil)
+        vc.tabBarItem = item
+        return vc
+    }()
+    
     lazy var searchVC: SearchMapViewController = {
         let vc = SearchMapViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
         let router = SearchMapRouter()
@@ -57,6 +68,7 @@ final class MainTabBarController: UITabBarController {
         super.init(nibName: nil, bundle: nil)
         tabBar.itemPositioning = .fill
         viewControllers = [
+            UINavigationController(rootViewController: homeVC),
             UINavigationController(rootViewController: searchVC),
             UINavigationController(rootViewController: qrScanVC),
             UINavigationController(rootViewController: userProfileVC)
