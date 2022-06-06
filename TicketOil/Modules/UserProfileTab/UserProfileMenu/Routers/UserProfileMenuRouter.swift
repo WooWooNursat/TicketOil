@@ -17,6 +17,7 @@ final class UserProfileMenuRouter: Router {
     
     enum RouteType {
         case myCards
+        case userProfileEdit
     }
     
     // MARK: - Properties
@@ -54,6 +55,10 @@ final class UserProfileMenuRouter: Router {
         case .myCards:
             let router = MyCardsRouter()
             let context = MyCardsRouter.PresentationContext.default
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
+        case .userProfileEdit:
+            let router = UserProfileEditRouter()
+            let context = UserProfileEditRouter.PresentationContext.default
             router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }

@@ -35,6 +35,7 @@ final class UserProfileMenuViewController: ViewController, View {
         button.contentHorizontalAlignment = .leading
         button.titleLabel?.font = .systemFont(ofSize: 12, weight: .regular)
         button.setTitle("Редактировать профиль", for: .normal)
+        button.addTarget(self, action: #selector(editProfileButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -69,6 +70,10 @@ final class UserProfileMenuViewController: ViewController, View {
     
     // MARK: - Actions
     
+    @objc private func editProfileButtonDidTap() {
+        viewModel.openUserProfileEdit()
+    }
+    
     // MARK: - Lifecycle
     
     init(navigationBarConfiguration: NavigationBarConfigurator) {
@@ -91,17 +96,16 @@ final class UserProfileMenuViewController: ViewController, View {
         configureNavigationBar()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
     // MARK: - Configurations
     
     private func configureNavigationBar() {
-        guard let navigationBar = navigationController?.navigationBar else {
-            return
-        }
-        
-        navigationBarConfiguration.configure(
-            navigationBar: navigationBar,
-            with: .transparent
-        )
+        navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     private func subscribe() {

@@ -29,12 +29,13 @@ final class UserProfileEditTableCell: UITableViewCell, View, Reusable {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .systemFont(ofSize: 20, weight: .semibold)
+        label.font = .systemFont(ofSize: 16, weight: .semibold)
+        label.textColor = .white
         return label
     }()
     
     lazy var textField: BaseTextField = {
-        let field = BaseTextField(size: .large)
+        let field = BaseTextField(size: .medium)
         return field
     }()
     
@@ -78,6 +79,8 @@ final class UserProfileEditTableCell: UITableViewCell, View, Reusable {
     // MARK: - Markup
     
     private func markup() {
+        backgroundColor = .clear
+        selectionStyle = .none
         [titleLabel, textField].forEach { contentView.addSubview($0) }
         
         titleLabel.snp.makeConstraints { make in

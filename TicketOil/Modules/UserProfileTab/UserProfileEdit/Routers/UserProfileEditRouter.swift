@@ -34,7 +34,9 @@ final class UserProfileEditRouter: Router {
         
         switch context {
         case .default:
-            break
+            let vc = UserProfileEditViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
+            vc.viewModel = UserProfileEditViewModel(router: self)
+            baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
     

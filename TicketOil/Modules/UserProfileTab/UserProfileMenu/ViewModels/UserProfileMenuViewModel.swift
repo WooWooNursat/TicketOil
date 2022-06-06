@@ -14,6 +14,7 @@ protocol UserProfileMenuViewModelProtocol: ViewModel {
     var update: BehaviorRelay<Void> { get }
     
     func openMyCards()
+    func openUserProfileEdit()
 }
 
 final class UserProfileMenuViewModel: UserProfileMenuViewModelProtocol {
@@ -41,6 +42,11 @@ final class UserProfileMenuViewModel: UserProfileMenuViewModelProtocol {
     
     func openMyCards() {
         let context = UserProfileMenuRouter.RouteType.myCards
+        router.enqueueRoute(with: context)
+    }
+    
+    func openUserProfileEdit() {
+        let context = UserProfileMenuRouter.RouteType.userProfileEdit
         router.enqueueRoute(with: context)
     }
 }

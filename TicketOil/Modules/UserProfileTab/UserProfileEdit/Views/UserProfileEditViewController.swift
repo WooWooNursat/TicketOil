@@ -13,6 +13,7 @@ final class UserProfileEditViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: UserProfileEditViewModelProtocol!
+    private let navigationBarConfigurator: NavigationBarConfigurator
     
     // MARK: - Outlets
     
@@ -25,14 +26,31 @@ final class UserProfileEditViewController: ViewController, View {
         view.contentInsetAdjustmentBehavior = .never
         view.delegate = self
         view.dataSource = self
+        view.separatorStyle = .none
+        view.backgroundColor = UIColor(hex: "#D61616")
         view.register(cellType: UserProfileEditTableCell.self)
         
         return view
     }()
     
+    lazy var saveButton: BaseButton = {
+        let button = BaseButton()
+        button.setTitle("Сохранить", for: .normal)
+        return button
+    }()
+    
     // MARK: - Actions
     
     // MARK: - Lifecycle
+    
+    init(navigationBarConfigurator: NavigationBarConfigurator) {
+        self.navigationBarConfigurator = navigationBarConfigurator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        nil
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,21 +68,15 @@ final class UserProfileEditViewController: ViewController, View {
     // MARK: - Configurations
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.tintColor = .systemBlue
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = false
-        if #available(iOS 13.0, *) {
-            navigationController?.navigationBar.standardAppearance.configureWithOpaqueBackground()
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        } else {
-            // Fallback on earlier versions
-            navigationController?.navigationBar.shadowImage = nil
-            navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        guard let navigationBar = navigationController?.navigationBar else {
+            return
         }
         
+        navigationController?.setNavigationBarHidden(false, animated: false)
+        navigationBarConfigurator.configure(
+            navigationBar: navigationBar,
+            with: .default(prefersLargeTitles: false, needsToDisplayShadow: false)
+        )
         navigationItem.title = "Редактировать"
     }
     
@@ -75,13 +87,20 @@ final class UserProfileEditViewController: ViewController, View {
     // MARK: - Markup
     
     private func markup() {
-        view.addSubview(tableView)
+        view.backgroundColor = UIColor(hex: "#D61616")
+        [tableView, saveButton].forEach { view.addSubview($0) }
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(saveButton.snp.top).offset(-8)
+        }
+        
+        saveButton.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-12)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
         }
     }
 }
