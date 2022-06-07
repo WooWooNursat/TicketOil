@@ -13,6 +13,7 @@ final class GasolineSelectViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: GasolineSelectViewModelProtocol!
+    private let navigationBarConfigurator: NavigationBarConfigurator
     
     // MARK: - Outlets
     
@@ -21,6 +22,7 @@ final class GasolineSelectViewController: ViewController, View {
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         view.backgroundColor = .white
+        view.layer.cornerRadius = 112 / 2
         return view
     }()
     
@@ -87,11 +89,13 @@ final class GasolineSelectViewController: ViewController, View {
         let label = UILabel()
         label.font = .systemFont(ofSize: 14, weight: .regular)
         label.textColor = .white
+        label.text = "Полный бак"
         return label
     }()
     
     lazy var switchView: UISwitch = {
         let view = UISwitch()
+        view.onTintColor = .white
         return view
     }()
     
@@ -113,6 +117,15 @@ final class GasolineSelectViewController: ViewController, View {
     
     // MARK: - Lifecycle
     
+    init(navigationBarConfigurator: NavigationBarConfigurator) {
+        self.navigationBarConfigurator = navigationBarConfigurator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -129,21 +142,14 @@ final class GasolineSelectViewController: ViewController, View {
     // MARK: - Configurations
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.tintColor = .systemBlue
-        navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.isTranslucent = true
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.view.backgroundColor = .white
-        navigationController?.navigationBar.prefersLargeTitles = false
-        if #available(iOS 13.0, *) {
-            navigationController?.navigationBar.standardAppearance.configureWithOpaqueBackground()
-            navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
-        } else {
-            // Fallback on earlier versions
-            navigationController?.navigationBar.shadowImage = nil
-            navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        guard let navigationBar = navigationController?.navigationBar else {
+            return
         }
         
+        navigationBarConfigurator.configure(
+            navigationBar: navigationBar,
+            with: .default(prefersLargeTitles: true, needsToDisplayShadow: false)
+        )
         navigationItem.title = "Выбор бензина"
     }
     
@@ -154,6 +160,7 @@ final class GasolineSelectViewController: ViewController, View {
     // MARK: - Markup
     
     private func markup() {
+        view.backgroundColor = UIColor(hex: "#D61616")
         [
             logoImageView,
             stationNameLabel,
@@ -214,12 +221,12 @@ final class GasolineSelectViewController: ViewController, View {
             make.leading.equalTo(fullTankLabel.snp.trailing).offset(8)
         }
         sliderView.snp.makeConstraints { make in
-            make.top.equalTo(fullTankLabel.snp.bottom).offset(8)
+            make.top.equalTo(fullTankLabel.snp.bottom).offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
         continueButton.snp.makeConstraints { make in
-            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-12)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }

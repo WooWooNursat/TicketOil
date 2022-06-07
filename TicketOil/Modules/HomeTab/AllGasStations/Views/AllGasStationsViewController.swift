@@ -98,4 +98,8 @@ extension AllGasStationsViewController: UITableViewDataSource, UITableViewDelega
         cell.viewModel = viewModel.cellViewModels[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.chooseGasStation(index: indexPath.row)
+    }
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class GasStation: Codable {
+struct GasStation: Codable {
     let id: Int
     let image: URL
     let name: String

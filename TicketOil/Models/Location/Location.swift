@@ -8,7 +8,7 @@
 import Foundation
 import CoreLocation
 
-final class Location: Codable {
+struct Location: Codable {
     let address: String
     let latitude: CLLocationDegrees
     let longitude: CLLocationDegrees

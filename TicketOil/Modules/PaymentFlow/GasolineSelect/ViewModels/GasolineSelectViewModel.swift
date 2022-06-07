@@ -15,11 +15,13 @@ final class GasolineSelectViewModel: GasolineSelectViewModelProtocol {
     // MARK: - Variables
     
     var router: Router
+    private let gasStation: GasStation
     
     // MARK: - Lifecycle
     
-    init(router: Router) {
+    init(router: Router, gasStation: GasStation) {
         self.router = router
+        self.gasStation = gasStation
     }
     
     // MARK: - Methods

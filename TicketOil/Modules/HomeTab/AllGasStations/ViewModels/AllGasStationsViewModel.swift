@@ -11,6 +11,8 @@ import RxRelay
 protocol AllGasStationsViewModelProtocol: ViewModel {
     var update: BehaviorRelay<Void> { get }
     var cellViewModels: [GasStationListItemTableCellViewModelProtocol] { get }
+    
+    func chooseGasStation(index: Int)
 }
 
 final class AllGasStationsViewModel: AllGasStationsViewModelProtocol {
@@ -25,9 +27,17 @@ final class AllGasStationsViewModel: AllGasStationsViewModelProtocol {
     init(router: Router) {
         self.router = router
         update = .init(value: ())
-        cellViewModels = []
+        cellViewModels = [
+            GasStationListItemTableCellViewModel(router: router, gasStation: GasStation(id: 0, image: URL(string: "www.google.com")!, name: "V-Oil #1", location: Location(address: "asgerg 32", latitude: 45, longitude: 46)))
+        ]
     }
     
     // MARK: - Methods
+    
+    func chooseGasStation(index: Int) {
+        let gasStation = cellViewModels[index].gasStation.value
+        let context = AllGasStationsRouter.RouteType.gasolineSelect(gasStation)
+        router.enqueueRoute(with: context)
+    }
 }
 

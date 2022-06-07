@@ -23,7 +23,7 @@ final class GasStationListItemTableCellViewModel: GasStationListItemTableCellVie
     
     init(router: Router, gasStation: GasStation) {
         self.router = router
-        gasStation = .init(from: gasStation)
+        self.gasStation = .init(value: gasStation)
     }
     
     // MARK: - Methods
