@@ -16,6 +16,7 @@ final class QRScanRouter: Router {
     }
     
     enum RouteType {
+        case gasolineSelect(gasStation: GasStation, columnNumber: Int)
     }
     
     // MARK: - Properties
@@ -38,7 +39,7 @@ final class QRScanRouter: Router {
         }
     }
     
-    func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
+    func enqueueRoute(with context: Any?, animated: Bool, completion: (() -> Void)?) {
         guard let routeType = context as? RouteType else {
             assertionFailure("The route type mismatch")
             return
@@ -50,6 +51,10 @@ final class QRScanRouter: Router {
         }
         
         switch routeType {
+        case .gasolineSelect(let gasStation, let columnNumber):
+            let router = GasolineSelectRouter()
+            let context = GasolineSelectRouter.PresentationContext.default(gasStation: gasStation, columnNumber: columnNumber)
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }
     

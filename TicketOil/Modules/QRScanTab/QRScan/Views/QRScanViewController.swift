@@ -183,5 +183,6 @@ extension QRScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
         
         print(qrCode)
+        
     }
 }

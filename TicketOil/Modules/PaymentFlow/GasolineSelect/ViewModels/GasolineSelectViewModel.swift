@@ -14,6 +14,7 @@ protocol GasolineSelectViewModelProtocol: ViewModel {
     var isContinueButtonEnabled: BehaviorRelay<Bool> { get }
     var columnNumbers: [String] { get }
     var gasolineTypes: [String] { get }
+    var isEnabledColumnNumber: Bool { get }
     
     func setSelectedColumnNumber(index: Int)
     func setSelectedGasolineType(index: Int)
@@ -30,6 +31,7 @@ final class GasolineSelectViewModel: GasolineSelectViewModelProtocol {
     var isContinueButtonEnabled: BehaviorRelay<Bool>
     var columnNumbers: [String]
     var gasolineTypes: [String]
+    var isEnabledColumnNumber: Bool
     private var selectedColumnNumber: Int?
     private var selectedGasolineType: String?
     private var litresNumber: Int = 1
@@ -38,10 +40,12 @@ final class GasolineSelectViewModel: GasolineSelectViewModelProtocol {
     
     // MARK: - Lifecycle
     
-    init(router: Router, gasStation: GasStation) {
+    init(router: Router, gasStation: GasStation, columnNumber: Int?) {
         self.router = router
         self.gasStation = .init(value: gasStation)
         self.isContinueButtonEnabled = .init(value: false)
+        selectedColumnNumber = columnNumber
+        isEnabledColumnNumber = columnNumber == nil
         _columnNumbers = [1, 2, 3, 4]
         columnNumbers = _columnNumbers.map { "Колонка \($0)" }
         gasolineTypes = ["Дизельное топливо", "АИ-92", "АИ-95", "АИ-98"]

@@ -42,7 +42,7 @@ final class MainTabBarController: UITabBarController {
         let vc = QRScanViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
         let router = QRScanRouter()
         router.baseViewController = vc
-        vc.viewModel = QRScanViewModel(router: router)
+        vc.viewModel = QRScanViewModel(router: router, gasStationsRepository: DIResolver.resolve(GasStationsRepository.self)!)
         
         let item = UITabBarItem(title: "Скан", image: Assets.scanTab.image, selectedImage: nil)
         item.imageInsets = .init(top: 6, left: 6, bottom: 6, right: 6)

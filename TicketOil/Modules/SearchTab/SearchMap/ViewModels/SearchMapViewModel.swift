@@ -29,7 +29,7 @@ final class SearchMapViewModel: SearchMapViewModelProtocol {
         self.router = router
         isAnimating = .init(value: false)
         gasStations = .init(value: [])
-        searchViewModel = GasStationSearchViewModel(router: router)
+        searchViewModel = GasStationSearchViewModel(router: router, gasStationsRepository: DIResolver.resolve(GasStationsRepository.self)!)
     }
     
     // MARK: - Methods

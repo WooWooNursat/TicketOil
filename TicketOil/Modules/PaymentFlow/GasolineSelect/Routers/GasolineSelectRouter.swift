@@ -12,7 +12,7 @@ final class GasolineSelectRouter: Router {
     // MARK: - Enums
     
     enum PresentationContext {
-        case `default`(gasStation: GasStation)
+        case `default`(gasStation: GasStation, columnNumber: Int? = nil)
     }
     
     enum RouteType {
@@ -34,9 +34,9 @@ final class GasolineSelectRouter: Router {
         baseViewController = baseVC
         
         switch context {
-        case let .default(gasStation):
+        case let .default(gasStation, columnNumber):
             let vc = GasolineSelectViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-            vc.viewModel = GasolineSelectViewModel(router: self, gasStation: gasStation)
+            vc.viewModel = GasolineSelectViewModel(router: self, gasStation: gasStation, columnNumber: columnNumber)
             baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }

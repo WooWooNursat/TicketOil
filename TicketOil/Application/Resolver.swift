@@ -69,6 +69,9 @@ private final class RepositoriesAssembly: Assembly {
         container.register(CardsRepository.self) { r in
             CardsRepositoryImpl(storage: r.resolve(Storage.self)!)
         }
+        container.register(GasStationsRepository.self) { _ in
+            GasStationsRepositoryImpl()
+        }
     }
 }
 

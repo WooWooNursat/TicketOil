@@ -51,6 +51,8 @@ final class GasolineSelectViewController: ViewController, View {
         textField.placeholder = "Выберите"
         textField.inputView = columnNumberPicker
         textField.addTarget(self, action: #selector(columnNumberTextFieldDidTouchDown), for: .touchDown)
+        textField.alpha = viewModel.isEnabledColumnNumber ? 1 : 0.6
+        textField.isUserInteractionEnabled = viewModel.isEnabledColumnNumber
         return textField
     }()
     

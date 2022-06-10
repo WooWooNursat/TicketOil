@@ -78,6 +78,7 @@
 		6D8643AA280BD4D8007EA1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8643A9280BD4D8007EA1A9 /* Assets.xcassets */; };
 		6D8643BB280BEC23007EA1A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D8643BD280BEC23007EA1A9 /* Localizable.strings */; };
 		6D8FFFDA2853DEAF00F9D763 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8FFFD92853DEAF00F9D763 /* UserManager.swift */; };
+		6D8FFFDC2853F3E100F9D763 /* GasStationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8FFFDB2853F3E100F9D763 /* GasStationsRepository.swift */; };
 		6DB83C342842938700BA93A8 /* GasolineSelectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C332842938700BA93A8 /* GasolineSelectRouter.swift */; };
 		6DB83C36284293A300BA93A8 /* GasolineSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C35284293A300BA93A8 /* GasolineSelectViewModel.swift */; };
 		6DB83C38284293CE00BA93A8 /* GasolineSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C37284293CE00BA93A8 /* GasolineSelectViewController.swift */; };
@@ -189,6 +190,7 @@
 		6D8643BC280BEC23007EA1A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D8643BE280BEC24007EA1A9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D8FFFD92853DEAF00F9D763 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		6D8FFFDB2853F3E100F9D763 /* GasStationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasStationsRepository.swift; sourceTree = "<group>"; };
 		6DB83C332842938700BA93A8 /* GasolineSelectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectRouter.swift; sourceTree = "<group>"; };
 		6DB83C35284293A300BA93A8 /* GasolineSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectViewModel.swift; sourceTree = "<group>"; };
 		6DB83C37284293CE00BA93A8 /* GasolineSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				6D01975128535340002F3A01 /* CardsRepository.swift */,
+				6D8FFFDB2853F3E100F9D763 /* GasStationsRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -1550,6 +1553,7 @@
 				6DB83C38284293CE00BA93A8 /* GasolineSelectViewController.swift in Sources */,
 				6D2E1444280C1210003C4894 /* StringExtension.swift in Sources */,
 				6D01975428535EC1002F3A01 /* UserStorage.swift in Sources */,
+				6D8FFFDC2853F3E100F9D763 /* GasStationsRepository.swift in Sources */,
 				6D49E8A3282ADE58008E8793 /* MyCardsRouter.swift in Sources */,
 				6D05B86F28107F3D00FFF7C9 /* UserRegisterRouter.swift in Sources */,
 				6D49E8B1282C18B8008E8793 /* AddCardViewController.swift in Sources */,

@@ -69,4 +69,9 @@ extension GasStationSearchController: UITableViewDataSource, UITableViewDelegate
         cell.viewModel = viewModel.cellViewModels[indexPath.row]
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        viewModel.openGasolineSelect(index: indexPath.row)
+    }
 }

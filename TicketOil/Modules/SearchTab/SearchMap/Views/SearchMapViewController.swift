@@ -64,7 +64,9 @@ final class SearchMapViewController: ViewController, View {
     
     @objc
     private func searchTextFieldEditingChanged(_ textField: UISearchTextField) {
+        guard let text = textField.text else { return }
         
+        viewModel.searchViewModel.searchText = text
     }
     
     // MARK: - Lifecycle
@@ -103,7 +105,7 @@ final class SearchMapViewController: ViewController, View {
         searchResultsVC.viewModel = viewModel.searchViewModel
         let searchVC = SearchControllerFactory().makeSearchController(searchResultsController: searchResultsVC)
         navigationItem.searchController = searchVC
-        searchVC.searchBar.searchTextField.addTarget(self, action: #selector(searchTextFieldEditingChanged), for: .touchUpInside)
+        searchVC.searchBar.searchTextField.addTarget(self, action: #selector(searchTextFieldEditingChanged), for: .editingChanged)
     }
     
     private func subscribe() {

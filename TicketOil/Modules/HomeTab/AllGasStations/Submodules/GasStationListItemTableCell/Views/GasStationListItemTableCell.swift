@@ -39,6 +39,7 @@ final class GasStationListItemTableCell: UITableViewCell, View, Reusable {
         let imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.contentMode = .scaleAspectFill
+        imageView.backgroundColor = UIColor(hex: "#C4C4C4")
         return imageView
     }()
     
