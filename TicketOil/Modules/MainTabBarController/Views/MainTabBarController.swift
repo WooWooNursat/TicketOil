@@ -30,7 +30,7 @@ final class MainTabBarController: UITabBarController {
         let vc = SearchMapViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
         let router = SearchMapRouter()
         router.baseViewController = vc
-        vc.viewModel = SearchMapViewModel(router: router)
+        vc.viewModel = SearchMapViewModel(router: router, gasStationsRepository: DIResolver.resolve(GasStationsRepository.self)!)
         
         let item = UITabBarItem(title: "Поиск", image: Assets.searchTab.image, selectedImage: nil)
         item.imageInsets = .init(top: 7, left: 7, bottom: 7, right: 7)

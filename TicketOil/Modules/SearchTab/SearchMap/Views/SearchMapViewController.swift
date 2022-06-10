@@ -60,6 +60,12 @@ final class SearchMapViewController: ViewController, View {
         return view
     }()
     
+    lazy var gasStationView: SearchMapGasStationView = {
+        let view = SearchMapGasStationView()
+        view.delegate = self
+        return view
+    }()
+    
     // MARK: - Actions
     
     @objc
@@ -124,7 +130,7 @@ final class SearchMapViewController: ViewController, View {
                         latitude: $0.location.latitude,
                         longitude: $0.location.longitude
                     ),
-                    image: UIImage()
+                    image: Assets.pin.image
                 )
                 placemark.userData = $0
                 placemark.addTapListener(with: self)
@@ -136,7 +142,7 @@ final class SearchMapViewController: ViewController, View {
     // MARK: - Markup
     
     private func markup() {
-        [mapView, loader].forEach { view.addSubview($0) }
+        [mapView, loader, gasStationView].forEach { view.addSubview($0) }
         
         mapView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -148,6 +154,12 @@ final class SearchMapViewController: ViewController, View {
         loader.snp.makeConstraints { make in
             make.center.equalTo(view.snp.center)
             make.size.equalTo(CGSize(width: 30, height: 30))
+        }
+        
+        gasStationView.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-12)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalToSuperview().offset(-16)
         }
     }
 }
@@ -228,7 +240,20 @@ extension SearchMapViewController: YMKClusterTapListener {
 
 extension SearchMapViewController: YMKMapObjectTapListener {
     func onMapObjectTap(with mapObject: YMKMapObject, point: YMKPoint) -> Bool {
+        guard let placemark = mapObject as? YMKPlacemarkMapObject else { return false }
+        
+        guard let gasStation = placemark.userData as? GasStation else { return true }
+        
+        gasStationView.gasStation = gasStation
+        
         return true
+    }
+}
+
+extension SearchMapViewController: SearchMapGasStationViewDelegate {
+    func didTapChooseButton() {
+        guard let gasStation = gasStationView.gasStation else {return}
+        viewModel.openGasolineSelect(gasStation: gasStation)
     }
 }
 

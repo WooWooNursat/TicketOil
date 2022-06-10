@@ -32,6 +32,7 @@ final class GasStationListItemTableCell: UITableViewCell, View, Reusable {
         let view = UIView()
         view.backgroundColor = .white
         view.layer.cornerRadius = 12
+        view.clipsToBounds = true
         return view
     }()
     
