@@ -19,6 +19,15 @@
 		6D01975428535EC1002F3A01 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01975328535EC1002F3A01 /* UserStorage.swift */; };
 		6D01975728535EE4002F3A01 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01975628535EE4002F3A01 /* User.swift */; };
 		6D019759285379B4002F3A01 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D019758285379B4002F3A01 /* DateExtension.swift */; };
+		6D01975F2853B07B002F3A01 /* FAQRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01975E2853B07B002F3A01 /* FAQRouter.swift */; };
+		6D0197612853B08B002F3A01 /* FAQViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0197602853B08B002F3A01 /* FAQViewModel.swift */; };
+		6D0197632853B14A002F3A01 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0197622853B14A002F3A01 /* FAQViewController.swift */; };
+		6D0197692853B3AE002F3A01 /* FAQQuestionTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0197682853B3AE002F3A01 /* FAQQuestionTableCellViewModel.swift */; };
+		6D01976B2853B3EF002F3A01 /* FAQQuestionTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01976A2853B3EF002F3A01 /* FAQQuestionTableCell.swift */; };
+		6D0197702853B508002F3A01 /* FAQAnswerTableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01976F2853B508002F3A01 /* FAQAnswerTableCellViewModel.swift */; };
+		6D0197722853B58A002F3A01 /* FAQAnswerTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0197712853B58A002F3A01 /* FAQAnswerTableCell.swift */; };
+		6D0197752853B606002F3A01 /* FAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0197742853B606002F3A01 /* FAQ.swift */; };
+		6D0197772853B9CD002F3A01 /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0197762853B9CD002F3A01 /* ArrayExtension.swift */; };
 		6D05B844280C359100FFF7C9 /* AuthHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05B843280C359100FFF7C9 /* AuthHomeRouter.swift */; };
 		6D05B846280C35DB00FFF7C9 /* AuthHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05B845280C35DB00FFF7C9 /* AuthHomeViewModel.swift */; };
 		6D05B84A280F171C00FFF7C9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05B849280F171C00FFF7C9 /* Router.swift */; };
@@ -116,6 +125,15 @@
 		6D01975328535EC1002F3A01 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
 		6D01975628535EE4002F3A01 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6D019758285379B4002F3A01 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		6D01975E2853B07B002F3A01 /* FAQRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQRouter.swift; sourceTree = "<group>"; };
+		6D0197602853B08B002F3A01 /* FAQViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewModel.swift; sourceTree = "<group>"; };
+		6D0197622853B14A002F3A01 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
+		6D0197682853B3AE002F3A01 /* FAQQuestionTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionTableCellViewModel.swift; sourceTree = "<group>"; };
+		6D01976A2853B3EF002F3A01 /* FAQQuestionTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQQuestionTableCell.swift; sourceTree = "<group>"; };
+		6D01976F2853B508002F3A01 /* FAQAnswerTableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnswerTableCellViewModel.swift; sourceTree = "<group>"; };
+		6D0197712853B58A002F3A01 /* FAQAnswerTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQAnswerTableCell.swift; sourceTree = "<group>"; };
+		6D0197742853B606002F3A01 /* FAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQ.swift; sourceTree = "<group>"; };
+		6D0197762853B9CD002F3A01 /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
 		6D05B843280C359100FFF7C9 /* AuthHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHomeRouter.swift; sourceTree = "<group>"; };
 		6D05B845280C35DB00FFF7C9 /* AuthHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHomeViewModel.swift; sourceTree = "<group>"; };
 		6D05B849280F171C00FFF7C9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -317,6 +335,108 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		6D01975A2853B064002F3A01 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				6D0197642853B393002F3A01 /* Submodules */,
+				6D01975D2853B06D002F3A01 /* Routers */,
+				6D01975C2853B06A002F3A01 /* ViewModels */,
+				6D01975B2853B066002F3A01 /* Views */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
+		6D01975B2853B066002F3A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D0197622853B14A002F3A01 /* FAQViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6D01975C2853B06A002F3A01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D0197602853B08B002F3A01 /* FAQViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6D01975D2853B06D002F3A01 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				6D01975E2853B07B002F3A01 /* FAQRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		6D0197642853B393002F3A01 /* Submodules */ = {
+			isa = PBXGroup;
+			children = (
+				6D01976C2853B4D5002F3A01 /* FAQAnswerTableCell */,
+				6D0197652853B396002F3A01 /* FAQQuestionTableCell */,
+			);
+			path = Submodules;
+			sourceTree = "<group>";
+		};
+		6D0197652853B396002F3A01 /* FAQQuestionTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				6D0197672853B39D002F3A01 /* ViewModels */,
+				6D0197662853B39C002F3A01 /* Views */,
+			);
+			path = FAQQuestionTableCell;
+			sourceTree = "<group>";
+		};
+		6D0197662853B39C002F3A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D01976A2853B3EF002F3A01 /* FAQQuestionTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6D0197672853B39D002F3A01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D0197682853B3AE002F3A01 /* FAQQuestionTableCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6D01976C2853B4D5002F3A01 /* FAQAnswerTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				6D01976E2853B4DD002F3A01 /* ViewModels */,
+				6D01976D2853B4DB002F3A01 /* Views */,
+			);
+			path = FAQAnswerTableCell;
+			sourceTree = "<group>";
+		};
+		6D01976D2853B4DB002F3A01 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D0197712853B58A002F3A01 /* FAQAnswerTableCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6D01976E2853B4DD002F3A01 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				6D01976F2853B508002F3A01 /* FAQAnswerTableCellViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6D0197732853B601002F3A01 /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				6D0197742853B606002F3A01 /* FAQ.swift */,
+			);
+			path = FAQ;
+			sourceTree = "<group>";
+		};
 		6D05B840280C357D00FFF7C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +602,7 @@
 		6D2E143F280C1197003C4894 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6D0197732853B601002F3A01 /* FAQ */,
 				6D01975528535EDF002F3A01 /* User */,
 				6D01974D28534FF1002F3A01 /* Card */,
 				6D01974528526741002F3A01 /* Product */,
@@ -502,6 +623,7 @@
 				6D05B8622810713F00FFF7C9 /* DictionaryExtension.swift */,
 				6D49E898282936CB008E8793 /* UIViewControllerExtension.swift */,
 				6D019758285379B4002F3A01 /* DateExtension.swift */,
+				6D0197762853B9CD002F3A01 /* ArrayExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1154,6 +1276,7 @@
 		6DEAE81D2811D64400670BD8 /* UserProfileTab */ = {
 			isa = PBXGroup;
 			children = (
+				6D01975A2853B064002F3A01 /* FAQ */,
 				6DD6A8BE284B4201009C36A1 /* UserProfileEdit */,
 				6D49E8A8282C184D008E8793 /* AddCard */,
 				6D49E89E282ADE3B008E8793 /* MyCards */,
@@ -1370,11 +1493,14 @@
 				6DEAE8232811D67D00670BD8 /* UserProfileMenuRouter.swift in Sources */,
 				6D01973C285234FB002F3A01 /* MakePaymentRouter.swift in Sources */,
 				6DEAE81C2811D24000670BD8 /* MainTabBarController.swift in Sources */,
+				6D0197632853B14A002F3A01 /* FAQViewController.swift in Sources */,
 				6D05B84E280F183800FFF7C9 /* View.swift in Sources */,
+				6D0197692853B3AE002F3A01 /* FAQQuestionTableCellViewModel.swift in Sources */,
 				6D49E8AF282C1892008E8793 /* AddCardViewModel.swift in Sources */,
 				6D05B850280F189100FFF7C9 /* AuthHomeViewController.swift in Sources */,
 				6D2E1437280C0E6A003C4894 /* L10n.swift in Sources */,
 				6D01975728535EE4002F3A01 /* User.swift in Sources */,
+				6D0197772853B9CD002F3A01 /* ArrayExtension.swift in Sources */,
 				6DD6A8B9284A8AAC009C36A1 /* PaymentSucessRouter.swift in Sources */,
 				6DD6A8F2284CA5E5009C36A1 /* GasStationSearchTableCellViewModel.swift in Sources */,
 				6DEAE8272811D6AF00670BD8 /* UserProfileMenuViewController.swift in Sources */,
@@ -1406,7 +1532,9 @@
 				6D2E143B280C0EC0003C4894 /* Resolver.swift in Sources */,
 				6DEAE8252811D68F00670BD8 /* UserProfileMenuViewModel.swift in Sources */,
 				6DB83C36284293A300BA93A8 /* GasolineSelectViewModel.swift in Sources */,
+				6D01976B2853B3EF002F3A01 /* FAQQuestionTableCell.swift in Sources */,
 				6DD6A8E4284B6CE2009C36A1 /* Location.swift in Sources */,
+				6D0197702853B508002F3A01 /* FAQAnswerTableCellViewModel.swift in Sources */,
 				6DD6A909284E81B2009C36A1 /* GasStationListItemTableCellViewModel.swift in Sources */,
 				6D05B865281072E100FFF7C9 /* UserError.swift in Sources */,
 				6DD6A8DD284B5DBC009C36A1 /* SearchMapViewController.swift in Sources */,
@@ -1435,6 +1563,7 @@
 				6DD6A90B284E81C8009C36A1 /* GasStationListItemTableCell.swift in Sources */,
 				6D05B87128107F5000FFF7C9 /* UserRegisterViewModel.swift in Sources */,
 				6DD6A8BB284A8AC4009C36A1 /* PaymentSuccessViewModel.swift in Sources */,
+				6D0197612853B08B002F3A01 /* FAQViewModel.swift in Sources */,
 				6D49E8B5282D5926008E8793 /* MyCardTableCell.swift in Sources */,
 				6DD6A900284E8158009C36A1 /* AllGasStationsRouter.swift in Sources */,
 				6D05B846280C35DB00FFF7C9 /* AuthHomeViewModel.swift in Sources */,
@@ -1447,10 +1576,13 @@
 				6D01973E28523510002F3A01 /* MakePaymentViewModel.swift in Sources */,
 				6D01974728526751002F3A01 /* Product.swift in Sources */,
 				6D2E1448280C1C2B003C4894 /* UIColorExtension.swift in Sources */,
+				6D0197722853B58A002F3A01 /* FAQAnswerTableCell.swift in Sources */,
 				6D01974C28534F30002F3A01 /* Storage.swift in Sources */,
+				6D01975F2853B07B002F3A01 /* FAQRouter.swift in Sources */,
 				6D49E89528293514008E8793 /* QRScanViewModel.swift in Sources */,
 				6D01974F28534FF6002F3A01 /* Card.swift in Sources */,
 				6DD6A8D9284B5D91009C36A1 /* SearchMapRouter.swift in Sources */,
+				6D0197752853B606002F3A01 /* FAQ.swift in Sources */,
 				6D05B84A280F171C00FFF7C9 /* Router.swift in Sources */,
 				6D49E8B9282D594A008E8793 /* MyCardTableCellViewModel.swift in Sources */,
 				6DD6A8F4284CA5FD009C36A1 /* GasStationSearchTableCell.swift in Sources */,

@@ -111,4 +111,13 @@ extension MyCardsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.selectCard(index: indexPath.row)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .destructive, title: "Удалить", handler: { [weak self] _,_,_ in
+            guard let self = self else { return }
+            
+            self.viewModel.deleteCard(index: indexPath.row)
+        })
+        return UISwipeActionsConfiguration(actions: [action])
+    }
 }

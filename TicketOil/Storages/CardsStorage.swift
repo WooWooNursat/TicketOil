@@ -20,11 +20,21 @@ extension Storage: CardsStorage {
     
     var cards: [Card] {
         get {
-            do { return try cache(model: [Card].self).object(forKey: Keys.cards.rawValue) }
+            guard let user = user else { return [] }
+            
+            do { return try cache(model: [Int: [Card]].self).object(forKey: Keys.cards.rawValue)[user.id] ?? [] }
             catch { return [] }
         }
         set {
-            try? cache(model: [Card].self).setObject(newValue, forKey: Keys.cards.rawValue)
+            guard let user = user else { return }
+            
+            do {
+                var cards = try cache(model: [Int: [Card]].self).object(forKey: Keys.cards.rawValue)
+                cards[user.id] = newValue
+                try? cache(model: [Int: [Card]].self).setObject(cards, forKey: Keys.cards.rawValue)
+            } catch {
+                try? cache(model: [Int: [Card]].self).setObject([user.id: newValue], forKey: Keys.cards.rawValue)
+            }
         }
     }
     

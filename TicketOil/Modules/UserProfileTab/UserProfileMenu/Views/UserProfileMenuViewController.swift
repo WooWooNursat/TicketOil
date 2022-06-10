@@ -38,16 +38,10 @@ final class UserProfileMenuViewController: ViewController, View {
         button.addTarget(self, action: #selector(editProfileButtonDidTap), for: .touchUpInside)
         return button
     }()
-    
-    lazy var gearButton: UIButton = {
-        let button = UIButton()
-        button.setImage(Assets.gear.image, for: .normal)
-        button.setContentCompressionResistancePriority(.required, for: .horizontal)
-        return button
-    }()
-    
+
     lazy var faqButton: UIButton = {
         let button = UIButton()
+        button.addTarget(self, action: #selector(faqButtonDidTap), for: .touchUpInside)
         button.setImage(Assets.faq.image, for: .normal)
         return button
     }()
@@ -69,6 +63,10 @@ final class UserProfileMenuViewController: ViewController, View {
     }()
     
     // MARK: - Actions
+    
+    @objc private func faqButtonDidTap() {
+        viewModel.openFaq()
+    }
     
     @objc private func editProfileButtonDidTap() {
         viewModel.openUserProfileEdit()
@@ -120,32 +118,23 @@ final class UserProfileMenuViewController: ViewController, View {
     
     private func markup() {
         view.backgroundColor = UIColor(hex: "#D61616")
-        [imageView, editProfileButton, gearButton, faqButton, tableView]
+        [imageView, editProfileButton, faqButton, tableView]
             .forEach { view.addSubview($0) }
-        
         imageView.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(48)
             make.leading.equalToSuperview().offset(16)
             make.size.equalTo(CGSize(width: 104, height: 104))
         }
-        
         editProfileButton.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.top)
             make.leading.equalTo(imageView.snp.trailing).offset(12)
-            make.trailing.equalTo(gearButton.snp.leading).offset(-12)
+            make.trailing.equalTo(faqButton.snp.leading).offset(-12)
             make.bottom.equalTo(imageView.snp.centerY)
         }
-        
-        gearButton.snp.makeConstraints { make in
+        faqButton.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(48)
             make.trailing.equalToSuperview().offset(-16)
         }
-        
-        faqButton.snp.makeConstraints { make in
-            make.top.equalTo(gearButton.snp.bottom).offset(20)
-            make.trailing.equalToSuperview().offset(-16)
-        }
-        
         tableView.snp.makeConstraints { make in
             make.top.equalTo(imageView.snp.bottom).offset(24)
             make.leading.trailing.equalToSuperview()

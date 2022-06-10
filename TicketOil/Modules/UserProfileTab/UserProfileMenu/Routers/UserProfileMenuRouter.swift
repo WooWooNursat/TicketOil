@@ -19,6 +19,7 @@ final class UserProfileMenuRouter: Router {
         case myCards
         case userProfileEdit
         case inviteFriend
+        case faq
         case logout
     }
     
@@ -66,6 +67,10 @@ final class UserProfileMenuRouter: Router {
             let inviteString = "Скачивай приложение TicketOil и оплачивай за бензин не выходя из машины! [Ссылка на скачивание приложения]"
             let vc = UIActivityViewController(activityItems: [inviteString], applicationActivities: nil)
             baseVC.present(vc, animated: animated, completion: completion)
+        case .faq:
+            let router = FAQRouter()
+            let context = FAQRouter.PresentationContext.default
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
         case .logout:
             let alert = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))

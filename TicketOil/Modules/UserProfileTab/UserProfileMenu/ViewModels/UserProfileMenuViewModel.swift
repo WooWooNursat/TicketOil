@@ -18,6 +18,7 @@ protocol UserProfileMenuViewModelProtocol: ViewModel {
     func openUserProfileEdit()
     func inviteFriend()
     func openIntercom()
+    func openFaq()
     func logout()
 }
 
@@ -61,6 +62,11 @@ final class UserProfileMenuViewModel: UserProfileMenuViewModelProtocol {
 
     func openIntercom() {
         Intercom.presentMessenger()
+    }
+    
+    func openFaq() {
+        let context = UserProfileMenuRouter.RouteType.faq
+        router.enqueueRoute(with: context)
     }
     
     func logout() {

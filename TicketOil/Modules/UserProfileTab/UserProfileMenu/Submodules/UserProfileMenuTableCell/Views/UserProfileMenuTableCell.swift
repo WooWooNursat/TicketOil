@@ -71,7 +71,7 @@ final class UserProfileMenuTableCell: UITableViewCell, View, Reusable {
     // MARK: - Markup
     
     private func markup() {
-        accessoryType = .disclosureIndicator
+        accessoryView = UIImageView(image: Assets.menuChevron.image)
         tintColor = .white
         backgroundColor = .clear
         contentView.addSubview(titleLabel)

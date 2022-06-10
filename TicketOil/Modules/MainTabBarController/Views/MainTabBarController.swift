@@ -20,7 +20,8 @@ final class MainTabBarController: UITabBarController {
         router.baseViewController = vc
         vc.viewModel = AllGasStationsViewModel(router: router)
         
-        let item = UITabBarItem(title: "Главная", image: UIImage(), selectedImage: nil)
+        let item = UITabBarItem(title: "Главная", image: Assets.homeTab.image, selectedImage: nil)
+        item.imageInsets = .init(top: 8, left: 8, bottom: 8, right: 8)
         vc.tabBarItem = item
         return vc
     }()
@@ -31,7 +32,8 @@ final class MainTabBarController: UITabBarController {
         router.baseViewController = vc
         vc.viewModel = SearchMapViewModel(router: router)
         
-        let item = UITabBarItem(title: "Поиск", image: UIImage(), selectedImage: nil)
+        let item = UITabBarItem(title: "Поиск", image: Assets.searchTab.image, selectedImage: nil)
+        item.imageInsets = .init(top: 7, left: 7, bottom: 7, right: 7)
         vc.tabBarItem = item
         return vc
     }()
@@ -42,7 +44,8 @@ final class MainTabBarController: UITabBarController {
         router.baseViewController = vc
         vc.viewModel = QRScanViewModel(router: router)
         
-        let item = UITabBarItem(title: "Скан", image: UIImage(), selectedImage: nil)
+        let item = UITabBarItem(title: "Скан", image: Assets.scanTab.image, selectedImage: nil)
+        item.imageInsets = .init(top: 6, left: 6, bottom: 6, right: 6)
         vc.tabBarItem = item
         
         return vc
@@ -54,7 +57,8 @@ final class MainTabBarController: UITabBarController {
         router.baseViewController = vc
         vc.viewModel = UserProfileMenuViewModel(router: router)
         
-        let item = UITabBarItem(title: "Профиль", image: UIImage(), selectedImage: nil)
+        let item = UITabBarItem(title: "Профиль", image: Assets.profileTab.image, selectedImage: nil)
+        item.imageInsets = .init(top: 8, left: 8, bottom: 8, right: 8)
         vc.tabBarItem = item
         
         return vc

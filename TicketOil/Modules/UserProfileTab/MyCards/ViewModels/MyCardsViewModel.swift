@@ -16,6 +16,7 @@ protocol MyCardsViewModelProtocol: ViewModel {
     func addCard()
     func selectCard(index: Int)
     func updateCards()
+    func deleteCard(index: Int)
 }
 
 final class MyCardsViewModel: MyCardsViewModelProtocol {
@@ -58,6 +59,12 @@ final class MyCardsViewModel: MyCardsViewModelProtocol {
             MyCardTableCellViewModel(router: router, card: card)
         }
         update.accept(())
+    }
+    
+    func deleteCard(index: Int) {
+        let cards = cardsRepository.cards
+        let filteredCards = cards.filter { $0 != cards[index] }
+        cardsRepository.cards = filteredCards
     }
 }
 
