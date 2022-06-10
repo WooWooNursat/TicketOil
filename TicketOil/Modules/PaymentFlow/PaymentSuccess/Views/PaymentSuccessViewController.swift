@@ -21,6 +21,7 @@ final class PaymentSuccessViewController: ViewController, View {
         label.font = .systemFont(ofSize: 30, weight: .bold)
         label.textAlignment = .center
         label.numberOfLines = 0
+        label.textColor = .white
         label.text = "Спасибо за покупку!"
         return label
     }()
@@ -28,6 +29,7 @@ final class PaymentSuccessViewController: ViewController, View {
     lazy var actionButton: BaseButton = {
         let button = BaseButton()
         button.setTitle("На главную", for: .normal)
+        button.addTarget(self, action: #selector(actionButtonDidTap), for: .touchUpInside)
         return button
     }()
     
@@ -35,6 +37,10 @@ final class PaymentSuccessViewController: ViewController, View {
     lazy var titleBottomLayoutGuide = UILayoutGuide()
     
     // MARK: - Actions
+    
+    @objc private func actionButtonDidTap() {
+        viewModel.goHome()
+    }
     
     // MARK: - Lifecycle
     
@@ -54,6 +60,7 @@ final class PaymentSuccessViewController: ViewController, View {
     // MARK: - Markup
     
     private func markup() {
+        view.backgroundColor = UIColor(hex: "#D61616")
         [titleLabel, actionButton].forEach { view.addSubview($0) }
         [titleTopLayoutGuide, titleBottomLayoutGuide].forEach { view.addLayoutGuide($0) }
         

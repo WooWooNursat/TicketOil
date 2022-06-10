@@ -14,6 +14,12 @@ enum L10n {
     }
   }
 
+  enum Litres {
+    static func count(_ p1: Int) -> String {
+      return L10n.tr("Localizable", "litres.count", p1)
+    }
+  }
+
   private static let localizationManager = DIResolver.resolve(LocalizationManager.self)!
   public static var bundle = Bundle(path: Bundle.main.path(forResource: localizationManager.language.rawValue, ofType: "lproj")!)
 }

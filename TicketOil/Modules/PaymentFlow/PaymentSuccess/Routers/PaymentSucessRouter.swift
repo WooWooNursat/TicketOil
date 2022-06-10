@@ -16,6 +16,7 @@ final class PaymentSucessRouter: Router {
     }
     
     enum RouteType {
+        case goHome
     }
     
     // MARK: - Properties
@@ -36,6 +37,8 @@ final class PaymentSucessRouter: Router {
         case .default:
             let vc = PaymentSuccessViewController()
             vc.viewModel = PaymentSuccessViewModel(router: self)
+            vc.modalPresentationStyle = .fullScreen
+            vc.modalTransitionStyle = .coverVertical
             baseVC.present(vc, animated: animated, completion: completion)
         }
     }
@@ -52,6 +55,8 @@ final class PaymentSucessRouter: Router {
         }
         
         switch routeType {
+        case .goHome:
+            MainTabBarController().setRootViewController()
         }
     }
     

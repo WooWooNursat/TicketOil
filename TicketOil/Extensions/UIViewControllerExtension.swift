@@ -18,5 +18,11 @@ extension UIViewController {
         guard let window = (UIApplication.shared.delegate as? AppDelegate)?.window else { return }
         
         window.rootViewController = self
+        UIView.transition(
+            with: window,
+            duration: 0.4,
+            options: .transitionCrossDissolve,
+            animations: nil
+        )
     }
 }

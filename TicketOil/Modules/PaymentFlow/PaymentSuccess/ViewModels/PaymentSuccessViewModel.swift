@@ -8,7 +8,7 @@
 import Foundation
 
 protocol PaymentSuccessViewModelProtocol: ViewModel {
-    
+    func goHome()
 }
 
 final class PaymentSuccessViewModel: PaymentSuccessViewModelProtocol {
@@ -23,5 +23,10 @@ final class PaymentSuccessViewModel: PaymentSuccessViewModelProtocol {
     }
     
     // MARK: - Methods
+    
+    func goHome() {
+        let context = PaymentSucessRouter.RouteType.goHome
+        router.enqueueRoute(with: context)
+    }
 }
 

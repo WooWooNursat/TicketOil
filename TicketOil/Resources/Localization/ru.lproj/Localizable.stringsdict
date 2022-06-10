@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+<dict>
+    <key>litres.count</key>
+    <dict>
+        <key>NSStringLocalizedFormatKey</key>
+        <string>%#@litres@</string>
+        <key>litres</key>
+        <dict>
+            <key>NSStringFormatSpecTypeKey</key>
+            <string>NSStringPluralRuleType</string>
+            <key>NSStringFormatValueTypeKey</key>
+            <string>d</string>
+            <key>zero</key>
+            <string>0 литров</string>
+            <key>one</key>
+            <string>%d литр</string>
+            <key>few</key>
+            <string>%d литра</string>
+            <key>many</key>
+            <string>%d литров</string>
+            <key>other</key>
+            <string>%d литров</string>
+        </dict>
+    </dict>
+</dict>
 </plist>

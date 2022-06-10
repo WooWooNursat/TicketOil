@@ -18,6 +18,8 @@ final class UserProfileMenuRouter: Router {
     enum RouteType {
         case myCards
         case userProfileEdit
+        case inviteFriend
+        case logout
     }
     
     // MARK: - Properties
@@ -60,6 +62,17 @@ final class UserProfileMenuRouter: Router {
             let router = UserProfileEditRouter()
             let context = UserProfileEditRouter.PresentationContext.default
             router.present(on: baseVC, animated: animated, context: context, completion: completion)
+        case .inviteFriend:
+            let inviteString = "Скачивай приложение TicketOil и оплачивай за бензин не выходя из машины! [Ссылка на скачивание приложения]"
+            let vc = UIActivityViewController(activityItems: [inviteString], applicationActivities: nil)
+            baseVC.present(vc, animated: animated, completion: completion)
+        case .logout:
+            let alert = UIAlertController(title: "Выход", message: "Вы уверены, что хотите выйти?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Отмена", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Выйти", style: .destructive) { _ in
+                AuthHomeRouter().setRootViewController()
+            })
+            baseVC.present(alert, animated: animated, completion: completion)
         }
     }
     

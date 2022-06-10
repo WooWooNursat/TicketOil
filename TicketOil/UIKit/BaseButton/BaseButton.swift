@@ -8,6 +8,17 @@
 import UIKit
 
 final class BaseButton: UIButton {
+    override var isEnabled: Bool {
+        didSet {
+            guard oldValue != isEnabled else {
+                return
+            }
+            
+            isUserInteractionEnabled = isEnabled
+            alpha = isEnabled ? 1 : 0.6
+        }
+    }
+    
     override var intrinsicContentSize: CGSize {
         CGSize(width: super.intrinsicContentSize.width, height: 48)
     }

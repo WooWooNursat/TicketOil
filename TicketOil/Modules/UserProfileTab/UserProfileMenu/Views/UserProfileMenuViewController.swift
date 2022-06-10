@@ -179,6 +179,12 @@ extension UserProfileMenuViewController: UITableViewDelegate, UITableViewDataSou
         switch viewModel.cellViewModels[indexPath.section][indexPath.row].type.value {
         case .myCards:
             viewModel.openMyCards()
+        case .inviteFriend:
+            viewModel.inviteFriend()
+        case .contactUs:
+            viewModel.openIntercom()
+        case .logOut:
+            viewModel.logout()
         default:
             return
         }

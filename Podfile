@@ -22,7 +22,7 @@ target 'TicketOil' do
   pod 'Cache', '~> 6'
   pod 'SwiftDate'
   pod 'YandexMapsMobile', '4.1.0-lite'
-
+  pod 'Intercom'
 end
 
 post_install do |installer|

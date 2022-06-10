@@ -38,6 +38,9 @@ private final class ApplicationAssembly: Assembly {
 
 private final class ManagersAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(LocalizationManager.self) { _ in
+            LocalizationManagerImplementation()
+        }.inObjectScope(.container)
     }
 }
 

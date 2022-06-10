@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.4.1)
   - Cache (6.0.0)
+  - Intercom (12.4.0)
   - IQKeyboardManagerSwift (6.5.6)
   - KeychainAccess (4.2.2)
   - Kingfisher (7.1.1)
@@ -33,6 +34,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 5.4.1)
   - Cache (~> 6)
+  - Intercom
   - IQKeyboardManagerSwift
   - KeychainAccess
   - Kingfisher
@@ -48,6 +50,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Intercom
     - SwiftDate
     - YandexMapsMobile
   trunk:
@@ -68,6 +71,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Cache: 4ca7e00363fca5455f26534e5607634c820ffc2d
+  Intercom: 43bbc1feee8192066601fd414d5e8ff381d8a4c8
   IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
   YandexMapsMobile: 549f83d16cb7d1ea73031163722852f408b85841
 
-PODFILE CHECKSUM: b6ac7fcc00df83a9fe211ce88873aa5cf155ffdb
+PODFILE CHECKSUM: 79c462286c1b99f06126dc77aea8c85f882c87ea
 
 COCOAPODS: 1.11.3

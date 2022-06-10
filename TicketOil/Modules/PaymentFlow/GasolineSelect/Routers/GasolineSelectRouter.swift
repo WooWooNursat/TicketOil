@@ -16,6 +16,7 @@ final class GasolineSelectRouter: Router {
     }
     
     enum RouteType {
+        case makePayment(product: Product)
     }
     
     // MARK: - Properties
@@ -40,7 +41,7 @@ final class GasolineSelectRouter: Router {
         }
     }
     
-    func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
+    func enqueueRoute(with context: Any?, animated : Bool, completion : (() -> Void)?) {
         guard let routeType = context as? RouteType else {
             assertionFailure("The route type mismatch")
             return
@@ -52,6 +53,10 @@ final class GasolineSelectRouter: Router {
         }
         
         switch routeType {
+        case let .makePayment(product):
+            let router = MakePaymentRouter()
+            let context = MakePaymentRouter.PresentationContext.default(product: product)
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }
     

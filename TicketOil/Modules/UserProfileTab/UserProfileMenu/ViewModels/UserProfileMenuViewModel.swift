@@ -8,6 +8,7 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import Intercom
 
 protocol UserProfileMenuViewModelProtocol: ViewModel {
     var cellViewModels: [[UserProfileMenuTableCellViewModelProtocol]] { get }
@@ -15,6 +16,9 @@ protocol UserProfileMenuViewModelProtocol: ViewModel {
     
     func openMyCards()
     func openUserProfileEdit()
+    func inviteFriend()
+    func openIntercom()
+    func logout()
 }
 
 final class UserProfileMenuViewModel: UserProfileMenuViewModelProtocol {
@@ -47,6 +51,20 @@ final class UserProfileMenuViewModel: UserProfileMenuViewModelProtocol {
     
     func openUserProfileEdit() {
         let context = UserProfileMenuRouter.RouteType.userProfileEdit
+        router.enqueueRoute(with: context)
+    }
+    
+    func inviteFriend() {
+        let context = UserProfileMenuRouter.RouteType.inviteFriend
+        router.enqueueRoute(with: context)
+    }
+
+    func openIntercom() {
+        Intercom.presentMessenger()
+    }
+    
+    func logout() {
+        let context = UserProfileMenuRouter.RouteType.logout
         router.enqueueRoute(with: context)
     }
 }

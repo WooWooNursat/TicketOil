@@ -1,21 +1,22 @@
 //
-//  ColumnSelectRouter.swift
+//  MakePaymentRouter.swift
 //  TicketOil
 //
-//  Created by Nursat on 28.05.2022.
+//  Created by Nursat on 09.06.2022.
 //
 
 import Foundation
 import UIKit
 
-final class ColumnSelectRouter: Router {
+final class MakePaymentRouter: Router {
     // MARK: - Enums
     
     enum PresentationContext {
-        case `default`
+        case `default`(product: Product)
     }
     
     enum RouteType {
+        case paymentSuccess
     }
     
     // MARK: - Properties
@@ -33,12 +34,14 @@ final class ColumnSelectRouter: Router {
         baseViewController = baseVC
         
         switch context {
-        case .default:
-            break
+        case let .default(product):
+            let vc = MakePaymentViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
+            vc.viewModel = MakePaymentViewModel(router: self, product: product)
+            baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
     
-    func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
+    func enqueueRoute(with context: Any?, animated: Bool, completion: (() -> Void)?) {
         guard let routeType = context as? RouteType else {
             assertionFailure("The route type mismatch")
             return
@@ -50,6 +53,10 @@ final class ColumnSelectRouter: Router {
         }
         
         switch routeType {
+        case .paymentSuccess:
+            let router = PaymentSucessRouter()
+            let context = PaymentSucessRouter.PresentationContext.default
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }
     
