@@ -69,6 +69,12 @@ final class MyCardTableCell: UITableViewCell, View, Reusable {
     // MARK: - Configurations
     
     private func subscribe() {
+        viewModel.card.bind { [weak self] card in
+            guard let self = self else { return }
+            
+            self.cardNumberLabel.text = card.number
+            self.nameLabel.text = card.cardHolderName
+        }.disposed(by: disposeBag)
     }
     
     // MARK: - Markup
@@ -86,7 +92,7 @@ final class MyCardTableCell: UITableViewCell, View, Reusable {
             make.top.equalToSuperview().offset(16)
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
-            make.bottom.equalToSuperview().offset(-16)
+            make.bottom.equalToSuperview()
         }
         
         cardNumberLabel.snp.makeConstraints { make in

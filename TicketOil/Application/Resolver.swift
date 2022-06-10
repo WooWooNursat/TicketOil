@@ -46,16 +46,25 @@ private final class ManagersAssembly: Assembly {
 
 private final class ProvidersAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(NetworkProvider.self) { r in
+            NetworkProvider()
+        }.inObjectScope(.container)
     }
 }
 
 private final class StoragesAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(Storage.self) { _ in
+            Storage()
+        }.inObjectScope(.container)
     }
 }
 
 private final class RepositoriesAssembly: Assembly {
     func assemble(container: Container) {
+        container.register(CardsRepository.self) { r in
+            CardsRepositoryImpl(storage: r.resolve(Storage.self)!)
+        }
     }
 }
 

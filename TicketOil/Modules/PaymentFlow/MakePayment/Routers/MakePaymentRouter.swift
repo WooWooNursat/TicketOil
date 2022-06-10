@@ -17,6 +17,7 @@ final class MakePaymentRouter: Router {
     
     enum RouteType {
         case paymentSuccess
+        case chooseCard(callBack: (Card) -> Void)
     }
     
     // MARK: - Properties
@@ -36,7 +37,7 @@ final class MakePaymentRouter: Router {
         switch context {
         case let .default(product):
             let vc = MakePaymentViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-            vc.viewModel = MakePaymentViewModel(router: self, product: product)
+            vc.viewModel = MakePaymentViewModel(router: self, product: product, cardsRepository: DIResolver.resolve(CardsRepository.self)!)
             baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
@@ -56,6 +57,10 @@ final class MakePaymentRouter: Router {
         case .paymentSuccess:
             let router = PaymentSucessRouter()
             let context = PaymentSucessRouter.PresentationContext.default
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
+        case let .chooseCard(callBack):
+            let router = MyCardsRouter()
+            let context = MyCardsRouter.PresentationContext.myCards(callBack: callBack)
             router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }

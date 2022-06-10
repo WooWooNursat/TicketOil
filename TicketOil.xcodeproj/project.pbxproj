@@ -12,6 +12,13 @@
 		6D0197402852352A002F3A01 /* MakePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01973F2852352A002F3A01 /* MakePaymentViewController.swift */; };
 		6D01974428525543002F3A01 /* PaymentInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01974328525543002F3A01 /* PaymentInfoView.swift */; };
 		6D01974728526751002F3A01 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01974628526751002F3A01 /* Product.swift */; };
+		6D01974A28534EA2002F3A01 /* CardsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01974928534EA2002F3A01 /* CardsStorage.swift */; };
+		6D01974C28534F30002F3A01 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01974B28534F30002F3A01 /* Storage.swift */; };
+		6D01974F28534FF6002F3A01 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01974E28534FF6002F3A01 /* Card.swift */; };
+		6D01975228535340002F3A01 /* CardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01975128535340002F3A01 /* CardsRepository.swift */; };
+		6D01975428535EC1002F3A01 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01975328535EC1002F3A01 /* UserStorage.swift */; };
+		6D01975728535EE4002F3A01 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D01975628535EE4002F3A01 /* User.swift */; };
+		6D019759285379B4002F3A01 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D019758285379B4002F3A01 /* DateExtension.swift */; };
 		6D05B844280C359100FFF7C9 /* AuthHomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05B843280C359100FFF7C9 /* AuthHomeRouter.swift */; };
 		6D05B846280C35DB00FFF7C9 /* AuthHomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05B845280C35DB00FFF7C9 /* AuthHomeViewModel.swift */; };
 		6D05B84A280F171C00FFF7C9 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D05B849280F171C00FFF7C9 /* Router.swift */; };
@@ -102,6 +109,13 @@
 		6D01973F2852352A002F3A01 /* MakePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakePaymentViewController.swift; sourceTree = "<group>"; };
 		6D01974328525543002F3A01 /* PaymentInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentInfoView.swift; sourceTree = "<group>"; };
 		6D01974628526751002F3A01 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		6D01974928534EA2002F3A01 /* CardsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsStorage.swift; sourceTree = "<group>"; };
+		6D01974B28534F30002F3A01 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		6D01974E28534FF6002F3A01 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		6D01975128535340002F3A01 /* CardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsRepository.swift; sourceTree = "<group>"; };
+		6D01975328535EC1002F3A01 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		6D01975628535EE4002F3A01 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6D019758285379B4002F3A01 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		6D05B843280C359100FFF7C9 /* AuthHomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHomeRouter.swift; sourceTree = "<group>"; };
 		6D05B845280C35DB00FFF7C9 /* AuthHomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthHomeViewModel.swift; sourceTree = "<group>"; };
 		6D05B849280F171C00FFF7C9 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -269,6 +283,40 @@
 			path = Product;
 			sourceTree = "<group>";
 		};
+		6D01974828534E89002F3A01 /* Storages */ = {
+			isa = PBXGroup;
+			children = (
+				6D01974928534EA2002F3A01 /* CardsStorage.swift */,
+				6D01974B28534F30002F3A01 /* Storage.swift */,
+				6D01975328535EC1002F3A01 /* UserStorage.swift */,
+			);
+			path = Storages;
+			sourceTree = "<group>";
+		};
+		6D01974D28534FF1002F3A01 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				6D01974E28534FF6002F3A01 /* Card.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		6D01975028535330002F3A01 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6D01975128535340002F3A01 /* CardsRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		6D01975528535EDF002F3A01 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				6D01975628535EE4002F3A01 /* User.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		6D05B840280C357D00FFF7C9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,6 +482,8 @@
 		6D2E143F280C1197003C4894 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6D01975528535EDF002F3A01 /* User */,
+				6D01974D28534FF1002F3A01 /* Card */,
 				6D01974528526741002F3A01 /* Product */,
 				6DD6A8E1284B6CD7009C36A1 /* Location */,
 				6DD6A8DE284B6C9B009C36A1 /* GasStation */,
@@ -451,6 +501,7 @@
 				6D05B860281070C400FFF7C9 /* JSONDecoderExtension.swift */,
 				6D05B8622810713F00FFF7C9 /* DictionaryExtension.swift */,
 				6D49E898282936CB008E8793 /* UIViewControllerExtension.swift */,
+				6D019758285379B4002F3A01 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -672,6 +723,8 @@
 		6D86439F280BD4D7007EA1A9 /* TicketOil */ = {
 			isa = PBXGroup;
 			children = (
+				6D01975028535330002F3A01 /* Repositories */,
+				6D01974828534E89002F3A01 /* Storages */,
 				6DD6A8F5284CB884009C36A1 /* Factories */,
 				6D8643B4280BEA80007EA1A9 /* Application */,
 				6D2E1442280C11FD003C4894 /* Extensions */,
@@ -1321,6 +1374,7 @@
 				6D49E8AF282C1892008E8793 /* AddCardViewModel.swift in Sources */,
 				6D05B850280F189100FFF7C9 /* AuthHomeViewController.swift in Sources */,
 				6D2E1437280C0E6A003C4894 /* L10n.swift in Sources */,
+				6D01975728535EE4002F3A01 /* User.swift in Sources */,
 				6DD6A8B9284A8AAC009C36A1 /* PaymentSucessRouter.swift in Sources */,
 				6DD6A8F2284CA5E5009C36A1 /* GasStationSearchTableCellViewModel.swift in Sources */,
 				6DEAE8272811D6AF00670BD8 /* UserProfileMenuViewController.swift in Sources */,
@@ -1329,6 +1383,7 @@
 				6D05B844280C359100FFF7C9 /* AuthHomeRouter.swift in Sources */,
 				6D49E89C282A8E5F008E8793 /* ViewController.swift in Sources */,
 				6D05B869281073A900FFF7C9 /* Code.swift in Sources */,
+				6D019759285379B4002F3A01 /* DateExtension.swift in Sources */,
 				6D2E143E280C1121003C4894 /* LocalizationManager.swift in Sources */,
 				6D4C8C5B28155958003BFA66 /* UserProfileMenuRowType.swift in Sources */,
 				6D05B854280F1EE800FFF7C9 /* NavigationBarConfigurator.swift in Sources */,
@@ -1358,10 +1413,12 @@
 				6D05B85A280F292000FFF7C9 /* BaseButton.swift in Sources */,
 				6DD6A8CB284B4286009C36A1 /* UserProfileDataRow.swift in Sources */,
 				6DD6A8F8284CB895009C36A1 /* SearchControllerFactory.swift in Sources */,
+				6D01975228535340002F3A01 /* CardsRepository.swift in Sources */,
 				6D4C8C552814292D003BFA66 /* UserProfileMenuTableCellViewModel.swift in Sources */,
 				6D05B84C280F182100FFF7C9 /* ViewModel.swift in Sources */,
 				6DB83C38284293CE00BA93A8 /* GasolineSelectViewController.swift in Sources */,
 				6D2E1444280C1210003C4894 /* StringExtension.swift in Sources */,
+				6D01975428535EC1002F3A01 /* UserStorage.swift in Sources */,
 				6D49E8A3282ADE58008E8793 /* MyCardsRouter.swift in Sources */,
 				6D05B86F28107F3D00FFF7C9 /* UserRegisterRouter.swift in Sources */,
 				6D49E8B1282C18B8008E8793 /* AddCardViewController.swift in Sources */,
@@ -1370,6 +1427,7 @@
 				6DD6A902284E8168009C36A1 /* AllGasStationsViewModel.swift in Sources */,
 				6D49E88C2828015B008E8793 /* AppCoordinator.swift in Sources */,
 				6D2E1441280C119E003C4894 /* Language.swift in Sources */,
+				6D01974A28534EA2002F3A01 /* CardsStorage.swift in Sources */,
 				6D05B85F2810704300FFF7C9 /* NetworkProvider.swift in Sources */,
 				6D49E893282934FE008E8793 /* QRScanRouter.swift in Sources */,
 				6D05B857280F217E00FFF7C9 /* BaseTextField.swift in Sources */,
@@ -1389,7 +1447,9 @@
 				6D01973E28523510002F3A01 /* MakePaymentViewModel.swift in Sources */,
 				6D01974728526751002F3A01 /* Product.swift in Sources */,
 				6D2E1448280C1C2B003C4894 /* UIColorExtension.swift in Sources */,
+				6D01974C28534F30002F3A01 /* Storage.swift in Sources */,
 				6D49E89528293514008E8793 /* QRScanViewModel.swift in Sources */,
+				6D01974F28534FF6002F3A01 /* Card.swift in Sources */,
 				6DD6A8D9284B5D91009C36A1 /* SearchMapRouter.swift in Sources */,
 				6D05B84A280F171C00FFF7C9 /* Router.swift in Sources */,
 				6D49E8B9282D594A008E8793 /* MyCardTableCellViewModel.swift in Sources */,

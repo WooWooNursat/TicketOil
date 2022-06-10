@@ -37,6 +37,8 @@ final class AddCardViewController: ViewController, View {
         let textField = BaseTextField(size: .large)
         textField.placeholder = "Номер карты"
         textField.keyboardType = .numberPad
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingDidBegin)
         return textField
     }()
     
@@ -60,6 +62,8 @@ final class AddCardViewController: ViewController, View {
         textField.placeholder = "ММ/ГГ"
         textField.keyboardType = .numberPad
         textField.textAlignment = .center
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingDidBegin)
         return textField
     }()
     
@@ -77,6 +81,8 @@ final class AddCardViewController: ViewController, View {
         textField.keyboardType = .numberPad
         textField.isSecureTextEntry = true
         textField.textAlignment = .center
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingDidBegin)
         return textField
     }()
     
@@ -89,8 +95,35 @@ final class AddCardViewController: ViewController, View {
     
     // MARK: - Actions
     
+    @objc private func textFieldDidChanged(_ textField: UITextField) {
+        guard let text = textField.text else {
+            return
+        }
+        
+        switch textField {
+        case cardNumberTextField:
+            textField.text = formatCardNumber(string: text)
+        case expirationTextField:
+            textField.text = formatExpirationString(string: text)
+        case cvvTextField:
+            textField.text = String(text.components(separatedBy: .decimalDigits.inverted).joined().prefix(3))
+        default:
+            return
+        }
+    }
+    
     @objc private func addButtonDidTap() {
-        viewModel.addCard()
+        guard let number = cardNumberTextField.text?.components(separatedBy: .decimalDigits.inverted).joined(),
+              let name = nameTextField.text?.uppercased(),
+              let expiration = expirationTextField.text?.split(separator: "/"),
+              let month = expiration.first,
+              let year = expiration.last,
+              let cvv = cvvTextField.text
+        else {
+            return
+        }
+        
+        viewModel.addCard(number: number, name: name, expirationMonth: String(month), expirationYear: String(year), cvv: cvv)
     }
     
     // MARK: - Lifecycle
@@ -207,5 +240,57 @@ final class AddCardViewController: ViewController, View {
             make.leading.equalToSuperview().offset(16)
             make.trailing.equalToSuperview().offset(-16)
         }
+    }
+}
+
+// MARK: - Formatters
+
+extension AddCardViewController {
+    private func formatCardNumber(string: String) -> String {
+        var digits = string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        
+        digits.resize(newSize: 16)
+        let mask = "____ ____ ____ ____"
+        var result = ""
+        
+        for ch in mask {
+            guard let number = digits.first else {
+                break
+            }
+            
+            guard ch == "_" else {
+                result.append(ch)
+                continue
+            }
+            
+            result.append(number)
+            digits.removeFirst()
+        }
+        
+        return result
+    }
+    
+    private func formatExpirationString(string: String) -> String {
+        var digits = string.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        
+        digits.resize(newSize: 4)
+        let mask = "__/__"
+        var result = ""
+        
+        for ch in mask {
+            guard let number = digits.first else {
+                break
+            }
+            
+            guard ch == "_" else {
+                result.append(ch)
+                continue
+            }
+            
+            result.append(number)
+            digits.removeFirst()
+        }
+        
+        return result
     }
 }

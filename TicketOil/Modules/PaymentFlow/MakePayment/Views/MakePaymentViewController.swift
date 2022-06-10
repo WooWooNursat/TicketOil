@@ -102,6 +102,10 @@ final class MakePaymentViewController: ViewController, View {
     lazy var cardView: PaymentInfoView = {
         let view = PaymentInfoView()
         view.titleLabel.text = "Карта "
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(cardViewDidTap))
+        view.addGestureRecognizer(gesture)
+        view.isUserInteractionEnabled = true
         return view
     }()
     
@@ -113,6 +117,10 @@ final class MakePaymentViewController: ViewController, View {
     }()
     
     // MARK: - Actions
+    
+    @objc private func cardViewDidTap() {
+        viewModel.chooseCard()
+    }
     
     @objc private func payButtonDidTap() {
         viewModel.openPaymentSuccess()
@@ -166,13 +174,23 @@ final class MakePaymentViewController: ViewController, View {
             let litresNumberText = product.isFullTank ? "полный бак" : "\(product.litresNumber)"
             self.litresNumberLabel.text = "Количество литров: \(litresNumberText)"
         }.disposed(by: disposeBag)
+        
+        viewModel.preferredCard.bind { [weak self] card in
+            guard let self = self else { return }
+            guard let card = card else {
+                self.cardView.titleLabel.text = "Выбрать карту"
+                return
+            }
+            
+            self.cardView.titleLabel.text = "Карта ...\(card.number.suffix(4))"
+        }.disposed(by: disposeBag)
     }
     
     // MARK: - Markup
     
     private func markup() {
         view.backgroundColor = UIColor(hex: "#D61616")
-        [infoContainerView, paymentInfoStackView, payButton].forEach { view.addSubview($0) }
+        [infoContainerView, useBalanceLabel, balanceLabel, useBalanceSwitch, paymentInfoStackView, payButton].forEach { view.addSubview($0) }
         [gasStationNameLabel, columnNumberLabel, gasolineTypeLabel, litresNumberLabel].forEach { infoContainerView.addSubview($0) }
         infoContainerView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide).offset(24)
@@ -200,8 +218,22 @@ final class MakePaymentViewController: ViewController, View {
             make.trailing.equalToSuperview().offset(-16)
             make.bottom.equalToSuperview().offset(-12)
         }
+        useBalanceLabel.snp.makeConstraints { make in
+            make.top.equalTo(infoContainerView.snp.bottom).offset(16)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalTo(useBalanceSwitch.snp.leading).offset(-8)
+        }
+        balanceLabel.snp.makeConstraints { make in
+            make.top.equalTo(useBalanceLabel.snp.bottom)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalTo(useBalanceSwitch.snp.leading).offset(-8)
+        }
+        useBalanceSwitch.snp.makeConstraints { make in
+            make.centerY.equalTo(useBalanceLabel.snp.bottom)
+            make.trailing.equalToSuperview().offset(-16)
+        }
         paymentInfoStackView.snp.makeConstraints { make in
-            make.top.equalTo(infoContainerView.snp.bottom).offset(12)
+            make.top.equalTo(balanceLabel.snp.bottom).offset(12)
             make.leading.equalToSuperview()
             make.trailing.equalToSuperview()
         }

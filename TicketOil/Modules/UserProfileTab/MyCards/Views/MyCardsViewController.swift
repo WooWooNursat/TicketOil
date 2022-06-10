@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class MyCardsViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: MyCardsViewModelProtocol!
+    var disposeBag = DisposeBag()
     private let navigationBarConfigurator: NavigationBarConfigurator
     
     // MARK: - Outlets
@@ -60,6 +63,7 @@ final class MyCardsViewController: ViewController, View {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
+        viewModel.updateCards()
     }
     
     // MARK: - Configurations
@@ -81,7 +85,9 @@ final class MyCardsViewController: ViewController, View {
     }
     
     private func subscribe() {
-        
+        viewModel.update.bind { [weak self] in
+            self?.tableView.reloadData()
+        }.disposed(by: disposeBag)
     }
     
     // MARK: - Markup
@@ -93,11 +99,16 @@ final class MyCardsViewController: ViewController, View {
 
 extension MyCardsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        0
+        viewModel.cellViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MyCardTableCell.self)
+        cell.viewModel = viewModel.cellViewModels[indexPath.row]
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.selectCard(index: indexPath.row)
     }
 }

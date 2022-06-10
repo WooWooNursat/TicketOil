@@ -56,7 +56,7 @@ final class UserProfileMenuRouter: Router {
         switch routeType {
         case .myCards:
             let router = MyCardsRouter()
-            let context = MyCardsRouter.PresentationContext.default
+            let context = MyCardsRouter.PresentationContext.myCards()
             router.present(on: baseVC, animated: animated, context: context, completion: completion)
         case .userProfileEdit:
             let router = UserProfileEditRouter()

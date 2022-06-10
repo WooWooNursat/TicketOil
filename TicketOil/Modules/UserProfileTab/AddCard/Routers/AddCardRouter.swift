@@ -35,7 +35,7 @@ final class AddCardRouter: Router {
         switch context {
         case .default:
             let vc = AddCardViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-            vc.viewModel = AddCardViewModel(router: self)
+            vc.viewModel = AddCardViewModel(router: self, cardsRepository: DIResolver.resolve(CardsRepository.self)!)
             baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }

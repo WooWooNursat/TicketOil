@@ -12,7 +12,7 @@ final class MyCardsRouter: Router {
     // MARK: - Enums
     
     enum PresentationContext {
-        case `default`
+        case myCards(callBack: ((Card) -> Void)? = nil)
     }
     
     enum RouteType {
@@ -34,9 +34,9 @@ final class MyCardsRouter: Router {
         baseViewController = baseVC
         
         switch context {
-        case .default:
+        case let .myCards(callBack):
             let vc = MyCardsViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-            vc.viewModel = MyCardsViewModel(router: self)
+            vc.viewModel = MyCardsViewModel(router: self, cardsRepository: DIResolver.resolve(CardsRepository.self)!, callBack: callBack)
             baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
@@ -61,6 +61,6 @@ final class MyCardsRouter: Router {
     }
     
     func dismiss(animated: Bool, completion: (() -> Void)?) {
-        baseViewController?.dismiss(animated: animated, completion: completion)
+        baseViewController?.navigationController?.popViewController(animated: animated)
     }
 }
