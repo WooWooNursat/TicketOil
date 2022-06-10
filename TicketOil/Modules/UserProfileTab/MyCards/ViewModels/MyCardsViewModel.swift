@@ -65,6 +65,7 @@ final class MyCardsViewModel: MyCardsViewModelProtocol {
         let cards = cardsRepository.cards
         let filteredCards = cards.filter { $0 != cards[index] }
         cardsRepository.cards = filteredCards
+        cellViewModels.remove(at: index)
     }
 }
 

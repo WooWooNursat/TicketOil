@@ -117,6 +117,7 @@ extension MyCardsViewController: UITableViewDataSource, UITableViewDelegate {
             guard let self = self else { return }
             
             self.viewModel.deleteCard(index: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .left)
         })
         return UISwipeActionsConfiguration(actions: [action])
     }

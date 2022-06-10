@@ -41,6 +41,10 @@ private final class ManagersAssembly: Assembly {
         container.register(LocalizationManager.self) { _ in
             LocalizationManagerImplementation()
         }.inObjectScope(.container)
+        
+        container.register(UserManager.self) { r in
+            UserManagerImpl(storage: r.resolve(Storage.self)!)
+        }.inObjectScope(.container)
     }
 }
 

@@ -45,6 +45,8 @@ final class AddCardViewController: ViewController, View {
     lazy var nameTextField: BaseTextField = {
         let textField = BaseTextField(size: .large)
         textField.placeholder = "Имя и фамилия"
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidChanged), for: .editingDidBegin)
         return textField
     }()
     
@@ -103,6 +105,8 @@ final class AddCardViewController: ViewController, View {
         switch textField {
         case cardNumberTextField:
             textField.text = formatCardNumber(string: text)
+        case nameTextField:
+            textField.text = text.uppercased()
         case expirationTextField:
             textField.text = formatExpirationString(string: text)
         case cvvTextField:

@@ -8,11 +8,14 @@
 import Foundation
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class UserProfileEditViewController: ViewController, View {
     // MARK: - Variables
     
     var viewModel: UserProfileEditViewModelProtocol!
+    var disposeBag = DisposeBag()
     private let navigationBarConfigurator: NavigationBarConfigurator
     
     // MARK: - Outlets
@@ -35,11 +38,16 @@ final class UserProfileEditViewController: ViewController, View {
     
     lazy var saveButton: BaseButton = {
         let button = BaseButton()
+        button.addTarget(self, action: #selector(saveButtonDidTap), for: .touchUpInside)
         button.setTitle("Сохранить", for: .normal)
         return button
     }()
     
     // MARK: - Actions
+    
+    @objc private func saveButtonDidTap() {
+        viewModel.save()
+    }
     
     // MARK: - Lifecycle
     
@@ -81,7 +89,12 @@ final class UserProfileEditViewController: ViewController, View {
     }
     
     private func subscribe() {
-        
+        viewModel.isEnabledSaveButton.bind { [weak self] isEnabled in
+            guard let self = self else { return }
+            
+            self.saveButton.isUserInteractionEnabled = isEnabled
+            self.saveButton.alpha = isEnabled ? 1 : 0.6
+        }.disposed(by: disposeBag)
     }
     
     // MARK: - Markup
@@ -112,7 +125,36 @@ extension UserProfileEditViewController: UITableViewDataSource, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: UserProfileEditTableCell.self)
-        cell.viewModel = viewModel.cellViewModels[indexPath.row]
+        let viewModel = viewModel.cellViewModels[indexPath.row]
+        cell.viewModel = viewModel
+        cell.delegate = self
+        switch viewModel.row.value {
+        case .name:
+            cell.textField.text = self.viewModel.name
+        case .surname:
+            cell.textField.text = self.viewModel.surname
+        case .carNumber:
+            cell.textField.text = self.viewModel.carNumber
+        case .gasoline:
+            cell.textField.text = self.viewModel.gasolineType
+        }
         return cell
+    }
+}
+
+extension UserProfileEditViewController: UserProfileEditTableCellDelegate {
+    func userProfileEditTableCell(_ cell: UserProfileEditTableCell) {
+        let value = cell.textField.text ?? ""
+        switch cell.viewModel.row.value {
+        case .name:
+            viewModel.name = value
+        case .surname:
+            viewModel.surname = value
+        case .carNumber:
+            viewModel.carNumber = value
+        case .gasoline:
+            viewModel.gasolineType = value
+        }
+        viewModel.isEnabledSaveButton.accept(!viewModel.name.isEmpty && !viewModel.surname.isEmpty && !viewModel.carNumber.isEmpty)
     }
 }

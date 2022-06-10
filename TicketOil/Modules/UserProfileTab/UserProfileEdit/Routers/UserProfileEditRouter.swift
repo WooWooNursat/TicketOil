@@ -13,6 +13,7 @@ final class UserProfileEditRouter: Router {
     
     enum PresentationContext {
         case `default`
+        case registration
     }
     
     enum RouteType {
@@ -20,6 +21,7 @@ final class UserProfileEditRouter: Router {
     
     // MARK: - Properties
     
+    var context: PresentationContext?
     weak var baseViewController: UIViewController?
     
     // MARK: - Methods
@@ -31,11 +33,12 @@ final class UserProfileEditRouter: Router {
         }
         
         baseViewController = baseVC
+        self.context = context
         
         switch context {
-        case .default:
+        default:
             let vc = UserProfileEditViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-            vc.viewModel = UserProfileEditViewModel(router: self)
+            vc.viewModel = UserProfileEditViewModel(router: self, userManager: DIResolver.resolve(UserManager.self)!)
             baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
@@ -56,6 +59,15 @@ final class UserProfileEditRouter: Router {
     }
     
     func dismiss(animated: Bool, completion: (() -> Void)?) {
-        baseViewController?.dismiss(animated: animated, completion: completion)
+        guard let context = context else {
+            return
+        }
+
+        switch context {
+        case .default:
+            baseViewController?.navigationController?.popViewController(animated: animated)
+        case .registration:
+            MainTabBarController().setRootViewController()
+        }
     }
 }

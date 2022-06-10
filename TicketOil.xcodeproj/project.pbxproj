@@ -77,6 +77,7 @@
 		6D8643A3280BD4D7007EA1A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8643A2280BD4D7007EA1A9 /* SceneDelegate.swift */; };
 		6D8643AA280BD4D8007EA1A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D8643A9280BD4D8007EA1A9 /* Assets.xcassets */; };
 		6D8643BB280BEC23007EA1A9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D8643BD280BEC23007EA1A9 /* Localizable.strings */; };
+		6D8FFFDA2853DEAF00F9D763 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8FFFD92853DEAF00F9D763 /* UserManager.swift */; };
 		6DB83C342842938700BA93A8 /* GasolineSelectRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C332842938700BA93A8 /* GasolineSelectRouter.swift */; };
 		6DB83C36284293A300BA93A8 /* GasolineSelectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C35284293A300BA93A8 /* GasolineSelectViewModel.swift */; };
 		6DB83C38284293CE00BA93A8 /* GasolineSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB83C37284293CE00BA93A8 /* GasolineSelectViewController.swift */; };
@@ -187,6 +188,7 @@
 		6D8643AE280BD4D8007EA1A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D8643BC280BEC23007EA1A9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6D8643BE280BEC24007EA1A9 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6D8FFFD92853DEAF00F9D763 /* UserManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
 		6DB83C332842938700BA93A8 /* GasolineSelectRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectRouter.swift; sourceTree = "<group>"; };
 		6DB83C35284293A300BA93A8 /* GasolineSelectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectViewModel.swift; sourceTree = "<group>"; };
 		6DB83C37284293CE00BA93A8 /* GasolineSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineSelectViewController.swift; sourceTree = "<group>"; };
@@ -595,6 +597,7 @@
 			isa = PBXGroup;
 			children = (
 				6D2E143D280C1121003C4894 /* LocalizationManager.swift */,
+				6D8FFFD92853DEAF00F9D763 /* UserManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1561,6 +1564,7 @@
 				6D05B857280F217E00FFF7C9 /* BaseTextField.swift in Sources */,
 				6D2E1439280C0E73003C4894 /* Assets.swift in Sources */,
 				6DD6A90B284E81C8009C36A1 /* GasStationListItemTableCell.swift in Sources */,
+				6D8FFFDA2853DEAF00F9D763 /* UserManager.swift in Sources */,
 				6D05B87128107F5000FFF7C9 /* UserRegisterViewModel.swift in Sources */,
 				6DD6A8BB284A8AC4009C36A1 /* PaymentSuccessViewModel.swift in Sources */,
 				6D0197612853B08B002F3A01 /* FAQViewModel.swift in Sources */,

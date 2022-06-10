@@ -16,6 +16,7 @@ final class UserRegisterRouter: Router {
     }
     
     enum RouteType {
+        case profileEdit
     }
     
     // MARK: - Properties
@@ -35,12 +36,12 @@ final class UserRegisterRouter: Router {
         switch context {
         case .default:
             let vc = UserRegisterViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
-            vc.viewModel = UserRegisterViewModel(router: self)
+            vc.viewModel = UserRegisterViewModel(router: self, userManager: DIResolver.resolve(UserManager.self)!)
             baseVC.navigationController?.pushViewController(vc, animated: animated)
         }
     }
     
-    func enqueueRoute(with context: Any?, animated _: Bool, completion _: (() -> Void)?) {
+    func enqueueRoute(with context: Any?, animated: Bool, completion: (() -> Void)?) {
         guard let routeType = context as? RouteType else {
             assertionFailure("The route type mismatch")
             return
@@ -52,6 +53,10 @@ final class UserRegisterRouter: Router {
         }
         
         switch routeType {
+        case .profileEdit:
+            let router = UserProfileEditRouter()
+            let context = UserProfileEditRouter.PresentationContext.registration
+            router.present(on: baseVC, animated: animated, context: context, completion: completion)
         }
     }
     

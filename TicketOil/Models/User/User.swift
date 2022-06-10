@@ -10,9 +10,8 @@ import Foundation
 struct User: Codable {
     let id: Int
     let phone: String
-    let image: URL
-    let name: String
-    let surname: String
-    let carNumber: String
-    let gasolineType: String
+    var name: String = ""
+    var surname: String = ""
+    var carNumber: String = ""
+    var gasolineType: String?
 }

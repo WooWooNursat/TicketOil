@@ -12,6 +12,10 @@ import RxSwift
 import UIKit
 import SnapKit
 
+protocol UserProfileEditTableCellDelegate: AnyObject {
+    func userProfileEditTableCell(_ cell: UserProfileEditTableCell)
+}
+
 final class UserProfileEditTableCell: UITableViewCell, View, Reusable {
     // MARK: - Constants
     
@@ -24,6 +28,7 @@ final class UserProfileEditTableCell: UITableViewCell, View, Reusable {
     }
     
     var disposeBag = DisposeBag()
+    weak var delegate: UserProfileEditTableCellDelegate?
     
     // MARK: - Outlets
     
@@ -36,8 +41,15 @@ final class UserProfileEditTableCell: UITableViewCell, View, Reusable {
     
     lazy var textField: BaseTextField = {
         let field = BaseTextField(size: .medium)
+        field.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         return field
     }()
+    
+    // MARK: - Actions
+    
+    @objc private func textFieldDidChange() {
+        delegate?.userProfileEditTableCell(self)
+    }
     
     // MARK: - Lifecycle
     

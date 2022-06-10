@@ -72,7 +72,7 @@ final class MyCardTableCell: UITableViewCell, View, Reusable {
         viewModel.card.bind { [weak self] card in
             guard let self = self else { return }
             
-            self.cardNumberLabel.text = card.number
+            self.cardNumberLabel.text = "... \(card.number.suffix(4))"
             self.nameLabel.text = card.cardHolderName
         }.disposed(by: disposeBag)
     }
