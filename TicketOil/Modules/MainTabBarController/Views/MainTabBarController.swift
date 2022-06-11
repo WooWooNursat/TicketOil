@@ -18,7 +18,7 @@ final class MainTabBarController: UITabBarController {
         let vc = AllGasStationsViewController(navigationBarConfigurator: DIResolver.resolve(NavigationBarConfigurator.self)!)
         let router = AllGasStationsRouter()
         router.baseViewController = vc
-        vc.viewModel = AllGasStationsViewModel(router: router)
+        vc.viewModel = AllGasStationsViewModel(router: router, gasStationsRepository: DIResolver.resolve(GasStationsRepository.self)!)
         
         let item = UITabBarItem(title: "Главная", image: Assets.homeTab.image, selectedImage: nil)
         item.imageInsets = .init(top: 8, left: 8, bottom: 8, right: 8)

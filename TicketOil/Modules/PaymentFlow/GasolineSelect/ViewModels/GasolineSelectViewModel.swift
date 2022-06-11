@@ -15,6 +15,7 @@ protocol GasolineSelectViewModelProtocol: ViewModel {
     var columnNumbers: [String] { get }
     var gasolineTypes: [String] { get }
     var isEnabledColumnNumber: Bool { get }
+    var selectedColumnNumber: Int? { get }
     
     func setSelectedColumnNumber(index: Int)
     func setSelectedGasolineType(index: Int)
@@ -32,7 +33,7 @@ final class GasolineSelectViewModel: GasolineSelectViewModelProtocol {
     var columnNumbers: [String]
     var gasolineTypes: [String]
     var isEnabledColumnNumber: Bool
-    private var selectedColumnNumber: Int?
+    var selectedColumnNumber: Int?
     private var selectedGasolineType: String?
     private var litresNumber: Int = 1
     private var isChosenFullTank: Bool = false

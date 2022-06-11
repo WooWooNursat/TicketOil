@@ -49,6 +49,9 @@ final class GasolineSelectViewController: ViewController, View {
     lazy var columnNumberTextField: BaseTextField = {
         let textField = BaseTextField()
         textField.placeholder = "Выберите"
+        if let columnNumber = viewModel.selectedColumnNumber {
+            textField.text = "Колонка \(columnNumber)"
+        }
         textField.inputView = columnNumberPicker
         textField.addTarget(self, action: #selector(columnNumberTextFieldDidTouchDown), for: .touchDown)
         textField.alpha = viewModel.isEnabledColumnNumber ? 1 : 0.6

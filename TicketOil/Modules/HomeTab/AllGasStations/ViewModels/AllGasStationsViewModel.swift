@@ -19,17 +19,19 @@ final class AllGasStationsViewModel: AllGasStationsViewModelProtocol {
     // MARK: - Variables
     
     var router: Router
+    private let gasStationsRepository: GasStationsRepository
     var update: BehaviorRelay<Void>
     var cellViewModels: [GasStationListItemTableCellViewModelProtocol]
     
     // MARK: - Lifecycle
     
-    init(router: Router) {
+    init(router: Router, gasStationsRepository: GasStationsRepository) {
         self.router = router
+        self.gasStationsRepository = gasStationsRepository
         update = .init(value: ())
-        cellViewModels = [
-            GasStationListItemTableCellViewModel(router: router, gasStation: GasStation(id: 0, image: URL(string: "www.google.com")!, name: "V-Oil #1", location: Location(address: "asgerg 32", latitude: 45, longitude: 46)))
-        ]
+        cellViewModels = gasStationsRepository.gasStations.map {
+            GasStationListItemTableCellViewModel(router: router, gasStation: $0)
+        }
     }
     
     // MARK: - Methods

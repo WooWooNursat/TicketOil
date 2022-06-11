@@ -183,6 +183,6 @@ extension QRScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
         
         print(qrCode)
-        
+        viewModel.handleQrCode(qrCode)
     }
 }

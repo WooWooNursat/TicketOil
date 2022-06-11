@@ -30,6 +30,7 @@ final class SearchMapGasStationView: UIView {
         button.backgroundColor = .black.withAlphaComponent(0.4)
         button.layer.cornerRadius = 18
         button.addTarget(self, action: #selector(closeButtonDidTap), for: .touchUpInside)
+        button.setImage(Assets.close.image, for: .normal)
         return button
     }()
     
